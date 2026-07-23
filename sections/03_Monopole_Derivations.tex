@@ -1,0 +1,127 @@
+\chapter{Analytical Derivation of Point Sound Sources} \label{sec:derivations}
+
+In this chapter, the derivations for density, pressure, and velocity perturbation components are described for monopole and dipole sources. These are used to validate the numerical integration of the FW-H code. By comparing the numerical output against the analytical solutions, the code's capability can be validated. For density specifically, the expression is,
+
+\begin{equation}
+    \rho'=\frac{p'}{c^2}
+    \label{eq:density}
+\end{equation}
+
+Which is valid for both monopole and dipole since there is no viscosity nor entropy generation. For pressure, generally the approach would be to convolve the pressure description for  either sources with the Green's function in 3D free-space (Appendix~\ref{app:GF}), described as
+
+\begin{equation}
+    G=\frac{\delta(g(\tau))}{4\pi r}
+    \label{eq:GreensFunction}
+\end{equation}
+
+where $g(\tau)=t-\tau-\frac{r(\tau)}{c}$ and $r(\tau)=|\bm{x}-y(\tau)|$. 
+
+\section{Analytical Solution for a Monopole} \label{subsec:Analytical Solution for a Monopole}
+
+\subsection{Monopole Pressure Equation} \label{subsubsec:mono_p}
+Taking the monopole definition as described in Equation \ref{eq:monopole_convolved}, taking the differentiation using the definitions as described in Appendix~\ref{app:derivatives}, the analytical solution for pressure is obtained,% and using the quotient rule to differentiate each term, is obtained,
+
+% \begin{equation*}
+%     p'(\bm{x}, t) = \frac{1}{4\pi} \left[ 
+%     \frac{\partial Q(\tau) / \partial \tau}{r(1-M_r)^2} -
+%     \frac{Q(\tau) v_r}{r^2 |1-M_r|^2} +
+%     \left(
+%     - \left(\frac{\partial M}{\partial \tau} \right) \frac{Q(\tau)}{r|1-M_r|^3} +
+%     \frac{Q(\tau)c(|M|^2 - M_r^2}{r^2 |1-M_r|^3}
+%     \right)
+%     \right]_{\tau *}
+%     \label{eq:monopole_p_der_step1}
+% \end{equation*}
+
+% The second term was algebraically manipulated by multiplying both the numerator and denominator by $1 - M_r$ to establish a common denominator and substitute the velocity in the radiation direction, $v_r$, with the speed of sound term, $c$. Then, using further algebraic manipulation for terms with $r^2(1-M_r)^3$ denominators, the analytical solution for pressure is obtained,
+
+\begin{equation}
+    p'(\bm{x}, t) = \frac{1}{4\pi} \left[ 
+    \frac{\partial Q(\tau) / \partial \tau}{r(1-M_r)^2} +
+    \left(\frac{\partial M}{\partial \tau} \right) \frac{Q(\tau)}{r(1-M_r)^3} +
+    \frac{Q(\tau) c (M_r - |M|^2)}{r^2(1-M_r)^3}
+    \right]_{\tau*}
+    \label{eq:monopole_p_der}
+\end{equation}
+
+\subsection{Monopole Velocity Equation} \label{subsubsec:monopole_u}
+
+Using the momentum equation,
+\begin{equation}
+    \rho_0 \frac{\partial u_i}{\partial t} +
+    \rho_0 \left( u_i \frac{\partial u_i}{\partial x_j} \right) =
+    -\frac{\partial p}{\partial x_i} +
+    \frac{\partial}{\partial x_j} \left(
+    \mu \left(\frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i} \right)
+    \right)
+    \label{eq:momentum_eq}
+\end{equation}
+
+Assuming the flow has no mean flow and is inviscid, substituting the monopole definition into the pressure term, and convolving with Green's function to replace $\partial/\partial x_i$ with $\partial/\partial t$, %the solution for velocity is obtained, %the second terms of both left- and right-hand are zero. Defining the pressure gradient by defining the pressure as monopole pressure definition,
+
+% \begin{equation*}
+%     - \frac{\partial p}{\partial x_i} =
+%     \frac{\partial}{\partial x_i} \frac{\partial}{\partial t} \left[
+%     \frac{Q(\tau)}{4\pi r (1-M_r)}
+%     \right]_{\tau*}
+% \end{equation*}
+
+% and cancelling the unsteady term from both sides gives the following for the momentum equation,
+
+% % \begin{equation*}
+% %     \rho_0 \frac{\partial u_i}{\partial t} =
+% %     \frac{\partial}{\partial x_i} \frac{\partial}{\partial t} \left[
+% %     \frac{Q(\tau)}{4\pi r (1-M_r)}
+% %     \right]_{\tau*}
+% % \end{equation*}
+
+% % cancelling the unsteady term from both sides leaves,
+
+% \begin{equation}
+%     u_i = \frac{1}{\rho_0} \frac{\partial}{\partial x_i} \left[ 
+%     \frac{Q(\tau)}{4\pi r (1-M_r)}
+%     \right]_{\tau *}
+%     \label{eq:monopole_spatial_derivative}
+% \end{equation}
+
+% Convolving with Green's function in free 3D-space is done to replace the spatial derivative into a temporal derivative,
+
+% \begin{equation*}
+%     p'(\bm{x}, t) = \frac{\partial}{\partial x_i} (Q_i \star G) =
+%     - \frac{\partial}{\partial t} \left( 
+%     Q_i \star \frac{x_iG}{c|\bm{x}|}
+%     \right) -
+%     Q_i \star \frac{x_i G}{|\bm{x}|^2}
+%     \label{eq:convolve_monopole}
+% \end{equation*}
+
+% which has the same form as the integral shown in Appendix \ref{app:derivatives}, Equation \ref{eq:C5}. Substituting the monopole source terms into $Q_i$, and converting to retarded time using the equation found in Appendix \ref{app:ddx_replace} Equation \ref{eq:retarded_time_def}, gives,
+
+% \begin{equation*}
+%     \frac{\partial}{\partial x_i} \left[ 
+%     \frac{Q(\tau)}{4\pi r (1-M_r)}
+%     \right]_{\tau*}
+%     = \frac{1}{1-M_r} \frac{\partial}{\partial\tau} \left[ 
+%     \frac{Q(\tau)r_i}{4\pi c \bm{r}^2 (1-M_r)^2}
+%     \right]_{\tau *}
+%     + \left[ 
+%     \frac{Q(\tau)r_i}{4 \pi r^3 (1-M_r)}
+%     \right]_{\tau*}
+%     \label{eq:monopole_velocity_underived}
+% \end{equation*}
+
+% which can then be solved analytically to give the solution for velocity,
+
+\begin{equation}
+    \begin{split}
+    u_i' 
+    &= \frac{1}{4\pi\rho_0} \Bigg[ \frac{(\partial Q(\tau)/\partial \tau)r_i}{c r^2(1 - M_r)^2} 
+    + \frac{Q(\tau)r_i}{r^3(1-M_r)^3}
+    + \left(\frac{dM}{d\tau} \right) \frac{Q(\tau)r_i}{cr^2(1-M_r)^3} \\
+    &\phantom{= \frac{1}{4\pi\rho_0}
+    \Bigg[} + \frac{Q(\tau)M^2r_i}{r^3(1-M_r)^3}
+    - \frac{Q(\tau)M_i}{r^2(1-M_r)^2}
+    \Bigg]_{\tau*}
+    \end{split}
+    \label{eq:monopole_velocity}
+\end{equation}

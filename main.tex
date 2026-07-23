@@ -1,0 +1,124 @@
+\documentclass[12pt, a4paper]{report}
+
+% --- FORMATTING REQUIREMENTS ---
+\usepackage{parskip}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage[margin=2cm]{geometry} 
+\usepackage{setspace}
+\onehalfspacing 
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% --- MATH & GRAPHICS PACKAGES ---
+\usepackage{amsmath, amssymb, bm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+\usepackage{longtable} 
+\usepackage{array}   
+\usepackage{float}
+\usepackage[titletoc]{appendix}
+
+% --- CHAPTER FORMATTING ---
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\sffamily} % Inherits your Helvetica sans-serif setup
+  {\chaptertitlename\ \thechapter} % Displays "Chapter X"
+  {20pt} % Vertical gap between the chapter identifier and the title
+  {\Huge} % Title text size
+
+\titlespacing*{\chapter}
+  {0pt} % Left indent
+  {50pt} % Space before the heading
+  {40pt} % Space after the heading
+
+\begin{document}
+%TC:ignore
+% --- TITLE PAGE ---
+\begin{titlepage}
+    \centering
+    % \vspace*{2cm}
+
+    \includegraphics[width=0.5\linewidth]{Imperial_College_London_new_logo.png}
+    
+    \vspace{2cm}
+    {\Large \textbf{Department of Mechanical Engineering}\par}
+    {\Large \textbf{Advanced Mechanical Engineering Course}\par}
+
+    \vspace{5cm}
+    {\Large \textbf{Analytical and Computational Investigation of Noise Radiation and Propagation from Lifting Devices}\par}
+    \vspace{1cm}
+    {\textbf{By}\par}
+    \vspace{1cm}
+    {\Large \textbf{Muhammad Abi Rizky}\par}
+    {\textbf{Bachelor of Engineering, Mechanical Engineering, Universitas Indonesia}}
+
+    
+    \vspace{3cm}
+    {A thesis submitted in partial fulfilment of the requirements for the Master of Science Degree of Imperial College London and the Diploma of Membership of Imperial College\par}
+    \vspace{1cm}
+    {September 2026\par}
+    % Optional: uncomment the line below if you need a word count
+    \vspace{1cm}
+    {Word Count: XXXX of 18000\par}
+    
+    \vfill
+\end{titlepage}
+
+% --- ABSTRACT ---
+\begin{abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\normalsize
+\onehalfspacing
+% \noindent Open rotor aeroengines offer significant improvements in propulsion efficiency, but expose fan-generated noise directly to the atmosphere. Predicting this noise requires robust acoustic solvers. This report outlines the preliminary development and validation of an analytical Ffowcs Williams-Hawkings (FW-H) code using a permeable surface, retarded-time formulation. The numerical integration logic was evaluated against exact analytical derivations for both monopole and dipole sources under stationary, co-translating, and relative-motion conditions.\\
+
+% \noindent The code demonstrated good accuracy ($<1\%$ error) for monopole sources, in which it captures convective terms and Doppler phase shifting, given sufficient grid and temporal resolutions. For dipole sources, derived analytical solutions were mathematically proven to fail when physical assumptions are violated. To bypass these limitations, a dual-monopole approximation was implemented and validated. This approach is sufficiently robust across all regimes, as it preserves the convective amplification factors that explicit Taylor expansions omit that was required when defining the dipole source term. While some validation work is still necessary, future work will move to a hybrid computational-analytical framework, using Unsteady Reynolds Averaged Navier Stokes (URANS)-FW-H hybrid to predict open rotor noise generation and propagation.
+\end{abstract}
+
+\newpage
+
+% --- TABLE OF CONTENTS ---
+\tableofcontents
+\listoffigures
+\clearpage
+
+% --- NOMENCLATURE ---
+\include{sections/00_nomenclature}
+%TC:endignore
+
+% --- CONTENT -----
+\input{sections/01_introduction}
+\input{sections/02_Literature_Review}
+\input{sections/03_Monopole_Derivations}
+\input{sections/04_Dipole_Derivations}
+\input{sections/05_Monopole_Validations}
+\input{sections/06_Dipole_Validations}
+\input{sections/07_directivity}
+\input{sections/08_discussion}
+\input{sections/09_conclusions}
+\input{sections/10_future_work}
+
+%TC:ignore
+% ------ Gen AI -------
+\clearpage
+\input{sections/99_genAI}
+
+% ------ APPENDICES -------
+\clearpage
+\begin{appendices}
+\numberwithin{equation}{chapter}
+
+\input{sections/11_appendices}
+\end{appendices}
+
+% ------ REFERENCES --------
+\clearpage
+\bibliographystyle{ieeetr}
+\bibliography{references}
+%TC:endignore
+
+\end{document}

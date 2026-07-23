@@ -1,0 +1,64 @@
+\chapter*{Nomenclature}
+\addcontentsline{toc}{section}{Nomenclature}
+
+\begin{longtable}{p{2.5cm} p{13.5cm}}
+% --- TABLE HEADER ---
+\textbf{Variable} & \textbf{Definition} \\
+\endfirsthead
+
+% --- HEADER FOR SUBSEQUENT PAGES ---
+\textbf{Variable} & \textbf{Definition} (continued) \\
+\endhead
+
+% --- ROMAN & GREEK SYMBOLS ---
+$c$ & speed of sound \\
+$M$ & Mach number ($M = u_i/c$) \\
+$p$ & pressure \\
+$\rho$ & density \\
+$u$ & velocity \\
+$t$ & observer time \\
+$\tau$ & retarded time \\
+$\Box^2$ & d'Alembertian wave operator, $\Box^2 = \nabla^2 - \frac{1}{c^2}\frac{\partial^2}{\partial t^2}$ \\
+$\nabla^2$ & Laplacian differential operator, $\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$ \\
+% $H$ & Heaviside step function \\
+$\delta$ & Dirac delta function. Subchapter \ref{subsec:dipole_derivation}: infinitesimally small distance between two monopoles \\
+$\delta_{ij}$ & Kronecker delta, $i=j$, $\delta_{ij}=1$; $i \neq j$, $\delta_{ij}=0$ \\
+% $D_v/Dt$ & convective derivative \\
+$y$ & static coordinate system \\
+$\eta$ & moving coordinate system \\
+$J$ & Jacobian of $y \rightarrow \eta$ coordinate change \\
+$q(x,t)$ & monopole source strength \\
+$f_i(x,t)$ & dipole source strength. Appendix \ref{app:GF}, arbitrary response. \\
+$T_{ij}$ & Lighthill stress Tensor, $T_{ij} = \rho u_i u_j + p_{ij} - c^2 p' \delta_{ij}$ \\
+% $L$ & turbulent length scale \\
+$\lambda$ & wavelength \\
+$k$ & wavenumber \\
+$f$ & wave frequency \\
+$\hat{r}$ & control surface radius \\
+$n$ & normal direction vector \\
+$\psi$ & Appendix \ref{app:GF}, arbitrary wave \\
+% $\Delta x$ & computational grid edge length \\
+% $\Delta t$ & computational time-step size \\
+
+% \vspace{0.25cm} & \\ % Blank row for spacing
+
+% --- SUBSCRIPTS ---
+\textbf{Subscripts} & \\
+$0$ & value in stationary flow \\
+$r$ & resolved in the direction of radiation \\
+$min$ & minimum/shortest value of interest \\
+$max$ & maximum/largest value of interest \\
+$m$ & monopole source \\
+$d$ & dipole source \\
+$ref$ & reference value \\
+$num$ & numerical value \\
+$i$ & vector towards the $i$-direction \\ 
+$j$ & vector towards the $j$-direction. Subchapter \ref{subsec:validation_description} the $j$-th index of a sum \\
+
+% \vspace{0.25cm} & \\
+
+% --- SUPERSCRIPTS ---
+\textbf{Superscripts} & \\
+$'$ & perturbation component, e.g., $p' = p(x,t) - p_{\infty}$ \\
+
+\end{longtable}

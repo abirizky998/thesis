@@ -1,0 +1,155 @@
+\section{Analytical Solution for a Dipole} \label{subsec:dipole_derivation}
+
+Following the dipole description in Equation \ref{eq:dipole_convolved}, the source forcing term $f_i$ is not an arbitrary vector. To analytically model a dipole, the mathematical equivalence between monopoles and dipoles must be established. A stationary monopole is described as,
+
+\begin{equation*}
+    p'_m(\bm{x}, t) = \frac{\partial}{\partial t} \left( \frac{Q(\tau)}{4\pi r} \right)
+\end{equation*}
+
+By describing a dipole as two monopoles of equal strength and opposite signs separated by an infinitely small distance $\delta$, the dipole pressure is a superposition of the two monopoles,
+
+\begin{equation*}
+    p'_d=p'_m(\bm{x},t)-p'_m(\bm{x}-\delta, t)
+\end{equation*}
+
+As $\delta$ tends to zero, this distance can be expressed as a first-order Taylor series expansion,
+
+\begin{equation*}
+    p'_d(\bm{x},t) \approx -\delta \frac{\partial}{\partial x} \frac{\partial}{\partial t} \left[ \frac{Q(\tau)}{4\pi r} 
+    \right] 
+\end{equation*}
+
+Hence, the dipole source strength $f_i(t)$ can be defined as
+
+\begin{equation}
+    f_i(t)=\delta \frac{\partial Q(\tau)}{\partial t}
+    \label{eq:dipole_source}
+\end{equation}
+
+Therefore, to validate the FW-H numerical integration against an analytical dipole, the dipole source strength is defined as above. It should be noted that this definition is limited to stationary cases and does not account for relative motion between the observer and source.
+
+To analytically derive the velocity for dipole, explicitly integrating the momentum equation is unviable, as it will return too many terms. Instead, limited solutions are obtained by applying some physical assumptions. The velocity derivations assume either a zero relative Mach number or a plane wave condition. An alternative approach that uses the superposition of two discrete monopoles will also be presented.
+
+\subsection{Dipole Pressure Equation} \label{subsubsec:dipole_p}
+
+Using the definition described in Equation \ref{eq:dipole_convolved}, replacing the $\partial / \partial x_i$ term as outlined in Appendix~\ref{app:ddx_replace}, and using the steps from monopole pressure, the pressure for a dipole is obtained,
+
+\begin{equation}
+\begin{split}
+    p'(\bm{x}, t) &= \frac{(\partial f_i(\tau)/\partial \tau) r_i}{4\pi r^2c(1-M_r)^2}
+    + \frac{f_i(\tau)r_i}{4\pi r^3 |1-M_r|^2}
+    - \frac{f_i(\tau)M_r}{4\pi r^2 |1-M_r|^2} \\
+    &\phantom{=} + \left( \frac{\partial M}{\partial \tau}\right) \frac{f_i(\tau)r_i}{4\pi r^2c|1-M_r|^3}
+    + \frac{f_i(\tau)r_i(|M|^2 - |M_r|^2)}{4\pi r^3 |1-M_r|^3}
+    \label{eq:dipole_pressure}
+\end{split}
+\end{equation}
+
+
+\subsection{Dipole Velocity Equation: Zero Relative Mach Number Assumption} \label{subsubsec:dipole_u1}
+
+Assuming inviscid and no mean flow in the momentum equation, the pressure gradient is,
+
+\begin{equation*}
+    -\frac{\partial p}{\partial x_i} = 
+    \frac{\partial^2}{\partial x_i \partial x_j} \left[ 
+    \frac{f_i(\tau)}{4\pi r (1-M_r)}
+    \right]_{\tau*}
+\end{equation*}
+
+Hence, the velocity is defined as,
+
+\begin{equation*}
+    u_i' = \frac{1}{4\pi\rho_0} \frac{\partial^2}{\partial x_i \partial x_j} \int_{-\infty}^t \frac{f_i(\tau)}{r(1-M_r)}dt
+\end{equation*}
+
+substituting the integrand to retarded time and assuming zero relative velocity, thus $dr/dt=0$ and $M_r=0$, letting $F_i(\tau) = \int f_i(\tau) d\tau \implies f_i(\tau) = \dot{F}_i(\tau)$, the analytical solution for dipole velocity that is valid for cases with zero relative Mach number is obtained,%the equation simplifies to,
+
+% \begin{equation}
+%     u_i = \frac{1}{4\pi r\rho_0} \frac{\partial^2}{\partial x_i \partial x_j} \int_{-\infty}^t {f_i(\tau)}d\tau
+% \end{equation}
+
+% Taking the integral, and letting $F_i(\tau) = \int f_i(\tau) d\tau \implies f_i(\tau) = \dot{F}_i(\tau)$:
+
+% \begin{equation*}
+%     u_i = \frac{1}{4\pi r\rho_0} \frac{\partial^2}{\partial x_i \partial x_j} \int_{-\infty}^t {f_i(\tau)}d\tau
+%     =
+%     \frac{1}{4\pi r\rho_0} \frac{\partial^2}{\partial x_i \partial x_j} \left[F_i(\tau-r/c)
+%     \right]
+% \end{equation*}
+
+% Hence, the analytical solution for velocity that is valid for cases of zero relative Mach number between the source and observer for near- and far-field, is,
+
+\begin{equation}
+    u_i'=\frac{1}{4\pi\rho_0} \left( 
+    \frac{F_j(3n_in_j-\delta_{ij})}{r^3} +
+    \frac{f_j(3n_in_j - \delta_{ij})}{cr^2} +
+    \frac{\dot{f_j}(n_in_j)}{c^2r}
+    \right)
+    \label{eq:dipole_u1}
+\end{equation}
+
+% where the first, second, and third terms on the right-hands side correspond to near-field, intermediate-field, and far-field, respectively.
+
+\subsection{Dipole Velocity Equation: Plane Wave Assumption} \label{subsubsec:dipole_u2}
+
+The plane wave assumption allows relative Mach number between the source and observer, provided the control surface is within the far-field of the source. The far-field is defined as,
+
+\begin{equation}
+    k\hat{r} \gg 1
+    \label{eq:far_field_def}
+\end{equation}
+
+% where $\hat{r}$ is the control surface radius. 
+Physically, this means the acoustic wavelength is smaller than the control surface diameter, allowing the entire wavelength to be fully captured by the permeable sphere. Using the derivations in Appendix~\ref{app:planeWave}, the velocity term with the plane wave assumption is obtained,
+
+% \begin{equation}
+%     p'(\bm{x},t)=\frac{g(t-r/c)}{r}
+%     \label{eq:plane_wave_def}
+% \end{equation}
+
+% \begin{equation*}
+%     \frac{\partial p'}{\partial x_i} = 
+%     \left[\frac{\partial}{\partial x_i}\frac{1}{r}g \right] +
+%     \frac{1}{r} \left[ \frac{\partial}{\partial x_i}g 
+%     \right]
+% \end{equation*}
+
+% where the first and second terms on the right-hand side correspond to the near- and far-field, respectively. Because the plane wave assumption is valid only in the far-field, evaluating only the derivative of the second term and taking the time derivative of $p'$ yields,
+
+% \begin{equation*}
+%     \frac{\partial p'}{\partial t} = \left[ 
+%     \frac{\partial}{\partial t} \frac{g}{r}
+%     \right]
+%     = \frac{1}{r} \frac{\partial}{\partial t} g(\tau) - g(\tau) \frac{v_r}{r^2}
+% \end{equation*}
+
+% In the far-field, $\frac{1}{r}\frac{\partial}{\partial t}g(\tau) \gg g(\tau) \frac{v_r}{r^2}$, simplifying the expression to,
+
+% \begin{equation*}
+%     \frac{\partial p'}{\partial t} \approx \frac{1}{r}\frac{\partial}{\partial t} g(\tau)
+% \end{equation*}
+
+% which gives the following expression,
+
+% \begin{equation*}
+%     \frac{\partial p'}{\partial x_i} = -\frac{n_i}{c} \frac{\partial p'}{\partial t}
+% \end{equation*}
+
+% substituting back into the momentum equation and manipulating algebraically provides the velocity equation for the plane wave assumption,
+
+\begin{equation}
+    u_i' = \frac{n_i}{\rho_0c}p'(\bm{x},t)
+    \label{eq:dipole_u2}
+\end{equation}
+
+\subsection{Dual Monopole} \label{subsubsec:dual_mono}
+
+An alternative approach to validate dipole sources is the dual monopole method. Using the definition of a dipole, this method uses two equal monopoles of opposing signs, separated by a small distance $\delta$, which in this case is defined as,
+
+\begin{equation}
+    k\delta \ll 1
+    \label{eq:delta_distance_def}
+\end{equation}
+
+To simplify the implementation, the analytical code calculates $\delta=0.01/k$. Another advantage of this approach is that it allows the prediction of the directivity patterns of the dipole.

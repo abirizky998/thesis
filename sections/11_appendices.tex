@@ -1,6 +1,8 @@
+% !TEX root = ../main.tex
+
 \chapter{Research Project Gantt Chart} \label{app:ganttchart}
 
-The following is the Gantt Chart of the current project up to its completion. Some adjustments had to be made along the duration of the project's execution such as CFD-related parts, however, the overall project objectives and milestones remain similar.
+The following is the Gantt Chart of the current project up to its completion. Some adjustments had to be made along the duration of the project's execution such as CFD-related parts, however, the overall project objectives and milestones remain the same.
 
 \begin{figure}[H]
     \centering
@@ -49,50 +51,50 @@ To derive the analytical point sources, a few definition for the derivatives are
     \label{eq:C5}
 \end{equation}
 
-\chapter{Permeable Surface with Retarded Time Formulation} \label{app:fwh_expansion}
+% \chapter{Permeable Surface with Retarded Time Formulation} \label{app:fwh_expansion}
 
-Given the inhomogeneous wave equation in the integral form of the FW-H equation,
-\begin{equation}
-    \begin{split}
-        \Box^2p'(\bm{x},t) &=
-        \frac{\partial^2}{\partial x_i\partial x_j} \int_{-\infty}^{\infty} \frac{\overline{T_{ij}}\delta(g)J}{4\pi r}d^3\eta d\tau \\
-        &\quad - \frac{\partial}{\partial x_i} \int_{-\infty}^\infty \frac{\left(p_{ij}n_j+\rho u_i (u_n-v_n) \right) \delta(f)\delta(g) |\nabla_xf|J}{4\pi r} d^3\eta d\tau \\
-        &\quad + \frac{\partial}{\partial t} \int_{-\infty}^\infty \frac{\left(\rho_0u_n + \rho'(u_n-v_n) \right) \delta(f)\delta(g) |\nabla_xf|J}{4\pi r}d^3\eta d\tau
-    \end{split}
-    \label{eq:FWH}
-\end{equation}
+% Given the inhomogeneous wave equation in the integral form of the FW-H equation,
+% \begin{equation}
+%     \begin{split}
+%         \Box^2p'(\bm{x},t) &=
+%         \frac{\partial^2}{\partial x_i\partial x_j} \int_{-\infty}^{\infty} \frac{\overline{T_{ij}}\delta(g)J}{4\pi r}d^3\eta d\tau \\
+%         &\quad - \frac{\partial}{\partial x_i} \int_{-\infty}^\infty \frac{\left(p_{ij}n_j+\rho u_i (u_n-v_n) \right) \delta(f)\delta(g) |\nabla_xf|J}{4\pi r} d^3\eta d\tau \\
+%         &\quad + \frac{\partial}{\partial t} \int_{-\infty}^\infty \frac{\left(\rho_0u_n + \rho'(u_n-v_n) \right) \delta(f)\delta(g) |\nabla_xf|J}{4\pi r}d^3\eta d\tau
+%     \end{split}
+%     \label{eq:FWH}
+% \end{equation}
 
-The first RHS term, the quadrupole, is not dealt with explicitly \cite{Parry1988, Hanson1985} as it is more significant for transonic and supersonic Mach numbers \cite{FfowcsWilliams1969, Ffowcs1969}. By choosing a sufficiently large permeable surface, the quadrupole contributions outside of this surface is negligible,
+% The first RHS term, the quadrupole, is not dealt with explicitly \cite{Parry1988, Hanson1985} as it is more significant for transonic and supersonic Mach numbers \cite{FfowcsWilliams1969, Ffowcs1969}. By choosing a sufficiently large permeable surface, the quadrupole contributions outside of this surface is negligible,
 
-\begin{equation}
-    \begin{split}
-        \Box^2p'(\bm{x},t) &=
-        - \frac{\partial}{\partial x_i} \int_{-\infty}^\infty \frac{\left(p_{ij}n_j+\rho u_i (u_n-v_n) \right) \delta(f)\delta(g) |\nabla_xf|J}{4\pi r} d^3\eta d\tau \\
-        &\quad + \frac{\partial}{\partial t} \int_{-\infty}^\infty \frac{\left(\rho_0u_n + \rho'(u_n-v_n) \right) \delta(f)\delta(g) |\nabla_xf|J}{4\pi r}d^3\eta d\tau
-    \end{split}
-    \label{eq:FWH_no_quad}
-\end{equation}
+% \begin{equation}
+%     \begin{split}
+%         \Box^2p'(\bm{x},t) &=
+%         - \frac{\partial}{\partial x_i} \int_{-\infty}^\infty \frac{\left(p_{ij}n_j+\rho u_i (u_n-v_n) \right) \delta(f)\delta(g) |\nabla_xf|J}{4\pi r} d^3\eta d\tau \\
+%         &\quad + \frac{\partial}{\partial t} \int_{-\infty}^\infty \frac{\left(\rho_0u_n + \rho'(u_n-v_n) \right) \delta(f)\delta(g) |\nabla_xf|J}{4\pi r}d^3\eta d\tau
+%     \end{split}
+%     \label{eq:FWH_no_quad}
+% \end{equation}
 
- Using the notation by di Francescantonio \cite{Francescantonio1997} to simplify the algebra, new variables $U_i$ and $L_i$ are introduced to represent mass and momentum fluxes through the control surface,
+%  Using the notation by di Francescantonio \cite{Francescantonio1997} to simplify the algebra, new variables $U_i$ and $L_i$ are introduced to represent mass and momentum fluxes through the control surface,
 
-\begin{equation*}
-    U_i=(1-\frac{\rho}{\rho_0})v_i  + \frac{\rho}{\rho_0}u_i \quad     L_i=p_{ij}n_j+pu_i(u_n-v_n)
-\end{equation*}
+% \begin{equation*}
+%     U_i=(1-\frac{\rho}{\rho_0})v_i  + \frac{\rho}{\rho_0}u_i \quad     L_i=p_{ij}n_j+pu_i(u_n-v_n)
+% \end{equation*}
 
-Considering an undistorted control surface that translates at a constant and subsonic velocity, the retarded time formulation, as described by Brentner and Farassat \cite{Brentner1998} is,
+% Considering an undistorted control surface that translates at a constant and subsonic velocity, the retarded time formulation, as described by Brentner and Farassat \cite{Brentner1998} is,
 
-\begin{equation}
-\begin{split}
-    p'(\bm{x}, t) &= \frac{1}{4\pi} \int_{S} \left[ \frac{\rho_0 (\dot{U}_n + U_{\hat{n}})}{r(1-M_r)^2} \right]_{\tau^*} dS(\eta) \\
-    &\quad + \frac{1}{4\pi} \int_{S} \left[ \frac{\rho_0 (r(dM/d\tau)_r + c(M_r - |M|^2))}{r^2(1-M_r)^3} \right]_{\tau^*} dS(\eta) \\
-    &\quad + \frac{1}{4\pi c} \int_{S} \left[ \frac{\dot{L}_r}{r(1-M_r)^2} \right]_{\tau^*} dS(\eta) \\
-    &\quad + \frac{1}{4\pi} \int_{S} \left[ \frac{L_r - L_m}{r^2(1-M_r)^2} \right]_{\tau^*} dS(\eta) \\
-    &\quad + \frac{1}{4\pi c} \int_{S} \left[ \frac{L_r(r(dM/d\tau)_r + c(M_r - |M|^2))}{r^2(1-M_r)^3} \right]_{\tau^*} dS(\eta)
-\end{split}
-\label{eq:fwh_full_expansion}
-\end{equation}
+% \begin{equation}
+% \begin{split}
+%     p'(\bm{x}, t) &= \frac{1}{4\pi} \int_{S} \left[ \frac{\rho_0 (\dot{U}_n + U_{\hat{n}})}{r(1-M_r)^2} \right]_{\tau^*} dS(\eta) \\
+%     &\quad + \frac{1}{4\pi} \int_{S} \left[ \frac{\rho_0 (r(dM/d\tau)_r + c(M_r - |M|^2))}{r^2(1-M_r)^3} \right]_{\tau^*} dS(\eta) \\
+%     &\quad + \frac{1}{4\pi c} \int_{S} \left[ \frac{\dot{L}_r}{r(1-M_r)^2} \right]_{\tau^*} dS(\eta) \\
+%     &\quad + \frac{1}{4\pi} \int_{S} \left[ \frac{L_r - L_m}{r^2(1-M_r)^2} \right]_{\tau^*} dS(\eta) \\
+%     &\quad + \frac{1}{4\pi c} \int_{S} \left[ \frac{L_r(r(dM/d\tau)_r + c(M_r - |M|^2))}{r^2(1-M_r)^3} \right]_{\tau^*} dS(\eta)
+% \end{split}
+% \label{eq:fwh_full_expansion_ch2}
+% \end{equation}
 
-The retarded time are calculated implicitly via the Newton-Raphson root-finding method. 
+% The retarded time are calculated implicitly via the Newton-Raphson root-finding method. 
 
 \chapter{Green's Function for Wave Equations} \label{app:GF}
 Given a wave equation,
@@ -271,7 +273,7 @@ which can then be solved analytically to give the solution for velocity,
 \end{equation}
 
 
-\chapter{Zero Relative Mach Number Assumption Derivations} \label{app:zeroMach}
+\chapter{Dipole Velocity: Zero Relative Mach Number Assumption Derivations} \label{app:zeroMach}
 Defining pressure gradient from the momentum equation and dipole definition,
 
 \begin{equation*}
@@ -313,9 +315,9 @@ Hence, the analytical solution for velocity that is valid for cases of zero rela
     % \label{eq:dipole_u1}
 \end{equation}
 
-\chapter{Plane Wave Assumption Derivations} \label{app:planeWave}
+\chapter{Dipole Velocity: Plane Wave Assumption Derivations} \label{app:planeWave}
 
-The plane wave,
+Given the plane wave,
 \begin{equation}
     p'(\bm{x},t)=\frac{g(t-r/c)}{r}
     \label{eq:plane_wave_def}
@@ -330,7 +332,7 @@ Taking the pressure gradient,
     \right]
 \end{equation*}
 
-where the first and second terms on the right-hand side correspond to the near- and far-field, respectively. Because the plane wave assumption is valid only in the far-field, evaluating only the derivative of the second term and taking the time derivative of $p'$ yields,
+where the first and second terms correspond to the near- and far-field, respectively. The plane wave is valid only in the far-field, and taking the time derivative yields,
 
 \begin{equation*}
     \frac{\partial p'}{\partial t} = \left[ 
@@ -351,7 +353,7 @@ which gives the following expression,
     \frac{\partial p'}{\partial x_i} = -\frac{n_i}{c} \frac{\partial p'}{\partial t}
 \end{equation*}
 
-substituting back into the momentum equation and manipulating algebraically provides the velocity equation for the plane wave assumption,
+substituting into the momentum equation provides the velocity equation for the plane wave,
 
 \begin{equation}
     u_i = \frac{n_i}{\rho_0c}p'(\bm{x},t)

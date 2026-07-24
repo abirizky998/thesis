@@ -1,8 +1,33 @@
+% !TEX root = ../main.tex
 
-\section{Analytical Solution for a Monopole} \label{subsec:Analytical Solution for a Monopole}
+\section{Analytical Solution for a Monopole} \label{sec:Analytical Solution for a Monopole}
 
-\subsection{Monopole Pressure Equation} \label{subsubsec:mono_p}
-Taking the monopole definition as described in Equation \ref{eq:monopole_convolved}, taking the differentiation using the definitions as described in Appendix~\ref{app:derivatives}, the analytical solution for pressure is obtained,% and using the quotient rule to differentiate each term, is obtained,
+Analytical approaches for monopole sources have been validated in previous work by Char and Thomas \cite{TingChar2024, Thomas2012}; however, expansion into dipoles requires further validation. Monopoles or thickness sources are sounds that are equivalent to mass supply, described as the following,
+
+\begin{equation}
+    \Box^2p'(\bm{x},t) = \frac{\partial}{\partial t} (Q(t) \delta(\bm{x} - y(t)))
+    \label{eq:monopole_def}
+\end{equation}
+
+Convolving the above with the Green's function in 3D free-space, described as,
+
+\begin{equation}
+    G=\frac{\delta(g(\tau))}{4\pi r}
+    \label{eq:GreensFunction}
+\end{equation}
+
+where $g(\tau)=t-\tau-\frac{r(\tau)}{c}$ and $r(\tau)=|\bm{x}-y(\tau)|$, gives the following,
+
+\begin{equation}
+    p'(\bm{x}, t)= \frac{\partial}{\partial t} \left[ \frac{Q(\tau)}{4\pi r (1-M_r)}\right]_{\tau*}
+    \label{eq:monopole_convolved}
+\end{equation}
+
+which is the description of the monopole used in this work.
+
+
+\subsection{Monopole Pressure Equation} \label{subsec:mono_p}
+Taking the monopole definition as described in Equation \ref{eq:monopole_convolved}, taking the differentiation using the definitions as described in Appendix~\ref{app:derivatives}, and convolving  the analytical solution for pressure is obtained,% and using the quotient rule to differentiate each term, is obtained,
 
 % \begin{equation*}
 %     p'(\bm{x}, t) = \frac{1}{4\pi} \left[ 
@@ -27,7 +52,7 @@ Taking the monopole definition as described in Equation \ref{eq:monopole_convolv
     \label{eq:monopole_p_der}
 \end{equation}
 
-\subsection{Monopole Velocity Equation} \label{subsubsec:monopole_u}
+\subsection{Monopole Velocity Equation} \label{subsec:monopole_u}
 
 Using the momentum equation,
 \begin{equation}
@@ -107,4 +132,12 @@ Assuming the flow has no mean flow and is inviscid, substituting the monopole de
     \Bigg]_{\tau*}
     \end{split}
     \label{eq:monopole_velocity}
+\end{equation}
+
+\subsection{Monopole Density Equation} \label{subsec:mono_rho}
+The expression for density is the same for both monopole and dipole since the flow is assumed to be linear and isentropic. Ttherefore, the expression for density is,
+
+\begin{equation}
+    \rho'=\frac{p'}{c^2}
+    \label{eq:density}
 \end{equation}

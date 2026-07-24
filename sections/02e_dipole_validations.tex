@@ -1,6 +1,8 @@
-\section{Validation of the FW-H Method for Dipole Sources} \label{subsec:dipole_validation}
+% !TEX root = ../main.tex
 
-With the FW-H numerical solver validated for monopoles, the validation is extended to dipole sources. As mentioned in Subchapter \ref{subsec:dipole_derivation}, explicitly deriving the velocity terms for dipole sources is unviable. This led to two derivation cases with physical assumptions and one using the two monopoles method. Therefore, the validation is separated into two parts; one with the dipole derivations, and another with the dual monopole under the same conditions. Then, the numerical results are compared to understand the limitations of each approach.
+\section{Validation of the FW-H Method for Dipole Sources} \label{sec:dipole_validation}
+
+With the FW-H numerical solver validated for monopoles, the validation is extended to dipole sources. As mentioned in Subchapter \ref{sec:dipole_derivation}, explicitly deriving the velocity terms for dipole sources is unviable. This led to two derivation cases with physical assumptions and one using the two monopoles method. Therefore, the validation is separated into two parts; one with the dipole derivations, and another with the dual monopole under the same conditions. Then, the numerical results are compared to understand the limitations of each approach.
 
 \subsection{Dipole Derivation Validations} \label{subsec:dipole_derivation_validation}
 
@@ -34,7 +36,7 @@ Unlike the monopole validation, the co-translating test case is omitted for the 
         \label{fig:far_invalid}
     \end{subfigure}
 
-    \caption[Comparison of analytical and numerical dipole.]{\centering Comparison of analytical and numerical dipole. \\
+    \caption[Comparison of analytical and numerical dipole.]{Comparison of analytical and numerical dipole.
     Top: zero relative Mach number case, with a) following, and b) violating the assumption.
     Bottom: plane wave case, with c) following, and d) violating the assumption.}
     \label{fig:dipole_validation}
@@ -111,7 +113,7 @@ In contrast to the analytical derivations, the dual-monopole method is significa
         \label{fig:dual_dipole_far_invalid}
     \end{subfigure}
 
-    \caption[Comparison of numerical dipole validations.]{\centering Comparison of numerical dipole validations. \\
+    \caption[Comparison of numerical dipole validations.]{\centering Comparison of numerical dipole validations.
     Top: zero relative Mach number cases, and Bottom: plane wave cases. Left column are cases where the dipole assumptions followed the analytical solutions show good agreement with dual monopole. Right column shows where the dipole assumptions are violated.}
     \label{fig:dual_dipole_validation}
 \end{figure}

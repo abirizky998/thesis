@@ -41,9 +41,11 @@
 \pagestyle{fancy}
 \fancyhf{} % Clear default headers and footers
 \fancyhead[L]{\nouppercase{\textbf{\leftmark}}} % Displays the chapter name on the left
+\setlength{\headheight}{14.5pt}
 % \fancyhead[R]{\thepage} % Displays the page number on the right
 \fancyfoot[C]{\thepage} % Optional: page number at the bottom center
 \renewcommand{\headrulewidth}{0.4pt} % Adds a line under the header
+
 
 \begin{document}
 %TC:ignore
@@ -138,8 +140,11 @@
 \input{sections/03a_numerical_fwh_sensitivity}
 \input{sections/03b_simple_source_sensitivity}
 \input{sections/03c_multipole_sensitivity}
+\input{sections/03d_concluding_summary}
 
-\input{sections/08_discussion}
+\input{sections/04a_open_rotor}
+
+% \input{sections/08_discussion}
 \input{sections/09_conclusions}
 \input{sections/10_future_work}
 

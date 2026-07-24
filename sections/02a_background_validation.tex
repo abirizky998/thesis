@@ -1,0 +1,157 @@
+\chapter{Background and Validation of the FW-H Method} \label{sec:derivations}
+ 
+In this chapter, the derivations for density, pressure, and velocity perturbation components are described for monopole and dipole sources. These are used to validate the numerical integration of the FW-H code. By comparing the numerical output against the analytical solutions, the code's capability can be validated. For density specifically, the expression is,
+
+\begin{equation}
+    \rho'=\frac{p'}{c^2}
+    \label{eq:density}
+\end{equation}
+
+Which is valid for both monopole and dipole since there is no viscosity nor entropy generation. For pressure, generally the approach would be to convolve the pressure description for  either sources with the Green's function in 3D free-space (Appendix~\ref{app:GF}), described as
+
+\begin{equation}
+    G=\frac{\delta(g(\tau))}{4\pi r}
+    \label{eq:GreensFunction}
+\end{equation}
+
+where $g(\tau)=t-\tau-\frac{r(\tau)}{c}$ and $r(\tau)=|\bm{x}-y(\tau)|$. 
+
+
+
+
+\section{Description of the FW-H Method}\label{sec:FWH_desc}
+
+To predict 
+
+The full expansion of this permeable surface formulation is presented in Appendix \ref{app:fwh_expansion}.
+
+Given the inhomogeneous wave equation in the integral form of the FW-H equation,
+\begin{equation}
+    \begin{split}
+        \Box^2p'(\bm{x},t) &=
+        \frac{\partial^2}{\partial x_i\partial x_j} \int_{-\infty}^{\infty} \frac{\overline{T_{ij}}\delta(g)J}{4\pi r}d^3\eta d\tau \\
+        &\quad - \frac{\partial}{\partial x_i} \int_{-\infty}^\infty \frac{\left(p_{ij}n_j+\rho u_i (u_n-v_n) \right) \delta(f)\delta(g) |\nabla_xf|J}{4\pi r} d^3\eta d\tau \\
+        &\quad + \frac{\partial}{\partial t} \int_{-\infty}^\infty \frac{\left(\rho_0u_n + \rho'(u_n-v_n) \right) \delta(f)\delta(g) |\nabla_xf|J}{4\pi r}d^3\eta d\tau
+    \end{split}
+    \label{eq:FWH}
+\end{equation}
+
+The first RHS term, the quadrupole, is not dealt with explicitly \cite{Parry1988, Hanson1985} as it is more significant for transonic and supersonic Mach numbers \cite{FfowcsWilliams1969, Ffowcs1969}. By choosing a sufficiently large permeable surface, the quadrupole contributions outside of this surface is negligible,
+
+\begin{equation}
+    \begin{split}
+        \Box^2p'(\bm{x},t) &=
+        - \frac{\partial}{\partial x_i} \int_{-\infty}^\infty \frac{\left(p_{ij}n_j+\rho u_i (u_n-v_n) \right) \delta(f)\delta(g) |\nabla_xf|J}{4\pi r} d^3\eta d\tau \\
+        &\quad + \frac{\partial}{\partial t} \int_{-\infty}^\infty \frac{\left(\rho_0u_n + \rho'(u_n-v_n) \right) \delta(f)\delta(g) |\nabla_xf|J}{4\pi r}d^3\eta d\tau
+    \end{split}
+    \label{eq:FWH_no_quad}
+\end{equation}
+
+ Using the notation by di Francescantonio \cite{Francescantonio1997} to simplify the algebra, new variables $U_i$ and $L_i$ are introduced to represent mass and momentum fluxes through the control surface,
+
+\begin{equation*}
+    U_i=(1-\frac{\rho}{\rho_0})v_i  + \frac{\rho}{\rho_0}u_i \quad     L_i=p_{ij}n_j+pu_i(u_n-v_n)
+\end{equation*}
+
+Considering an undistorted control surface that translates at a constant and subsonic velocity, the retarded time formulation, as described by Brentner and Farassat \cite{Brentner1998} is,
+
+\begin{equation}
+\begin{split}
+    p'(\bm{x}, t) &= \frac{1}{4\pi} \int_{S} \left[ \frac{\rho_0 (\dot{U}_n + U_{\hat{n}})}{r(1-M_r)^2} \right]_{\tau^*} dS(\eta) \\
+    &\quad + \frac{1}{4\pi} \int_{S} \left[ \frac{\rho_0 (r(dM/d\tau)_r + c(M_r - |M|^2))}{r^2(1-M_r)^3} \right]_{\tau^*} dS(\eta) \\
+    &\quad + \frac{1}{4\pi c} \int_{S} \left[ \frac{\dot{L}_r}{r(1-M_r)^2} \right]_{\tau^*} dS(\eta) \\
+    &\quad + \frac{1}{4\pi} \int_{S} \left[ \frac{L_r - L_m}{r^2(1-M_r)^2} \right]_{\tau^*} dS(\eta) \\
+    &\quad + \frac{1}{4\pi c} \int_{S} \left[ \frac{L_r(r(dM/d\tau)_r + c(M_r - |M|^2))}{r^2(1-M_r)^3} \right]_{\tau^*} dS(\eta)
+\end{split}
+\label{eq:fwh_full_expansion}
+\end{equation}
+
+The retarded time are calculated implicitly via the Newton-Raphson root-finding method. 
+
+
+XXXXXX
+
+Analytical approaches for monopole sources have been validated in previous work by Char and Thomas \cite{TingChar2024, Thomas2012}; however, expansion into dipoles requires further validation. Monopoles or thickness sources are sounds that are equivalent to mass supply, described as the following,
+
+\begin{equation}
+    \Box^2p'(\bm{x},t) = \frac{\partial}{\partial t} (Q(t) \delta(\bm{x} - y(t)))
+    \label{eq:monopole_def}
+\end{equation}
+
+Convolving the above with the Green's function in 3D free-space gives the following,
+
+\begin{equation}
+    p'(\bm{x}, t)= \frac{\partial}{\partial t} \left[ \frac{Q(\tau)}{4\pi r (1-M_r)}\right]_{\tau*}
+    \label{eq:monopole_convolved}
+\end{equation}
+
+which is the description of the monopole used in this work.
+
+Dipoles or loading sources are sounds due to forces acting on the fluid, equivalent to body forces and momentum supply. It is also equivalent to two equal monopoles with opposite signs at an infinitesimally small distance. The dipole is described as the following,
+
+\begin{equation}
+    p'(\bm{x}, t)=-\frac{\partial}{\partial x_i} \left[\frac{f_i(\tau)}{4\pi r(1-M_r)}\right]_{\tau *}
+    \label{eq:dipole_convolved}
+\end{equation}
+
+It is necessary to validate the analytical code's prediction of phase, amplitude, and directivity patterns against a known theoretical source before using it to predict noise from CFD data.
+
+XXXXXXXXXX
+
+
+\section{Description of Validation Process} \label{sec:validation_description}
+To compare the accuracy of the derivations described in Chapter \ref{sec:derivations}, several test cases are used to model a point sound source and an observer. This section describes the test cases used and the validations. Figure \ref{fig:fwh_validation} below illustrates the framework used for validation. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{fig_monopole/fwh_domain_observer_arrows.png}
+    \caption{Code validation framework}
+    \label{fig:fwh_validation}
+\end{figure}
+
+The numerical code samples the source to the permeable boundary (black arrow), followed by surface integration of pressure to calculate the acoustic pressure at the observer (blue arrow). Analytical pressure is calculated directly from the source to the observer (red arrow).
+
+\subsection{Test Cases} \label{subsubsec:test_cases}
+In all validation test cases, the point source is prescribed with strength $Q(\tau)=\sin{(10\tau)}$, from a starting point at the origin, $\left[0,0,0\right]$. Speed of sound $c$ and freestream density $\rho_0$ are set to $340m/s$ and $1.2 kg/m^3$, respectively. The observer's location depends on the case. A control surface surrounding the source are prescribed with a radius $r$. 
+
+These following are based on the work of Char \cite{TingChar2024} and are extended for dipoles:
+
+\begin{itemize}
+    \item Stationary and co-translating point source and observer. This test case is used as a baseline to test the overall prediction of the zero relative motion between point source and observer. The tests will also demonstrate the similarity between the two cases. 
+    
+    \begin{figure}[H]
+        \begin{subfigure}[b]{0.495\textwidth}
+            \includegraphics[width=\textwidth]{fig_test_cases/stationary_stationary.png}
+            \caption{}
+            \label{fig:testcase_ss}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.495\textwidth}
+            \includegraphics[width=\textwidth]{fig_test_cases/translating_translating.png}
+            \caption{}
+            \label{fig:testcase_tt}
+        \end{subfigure}
+        \caption{\centering Illustration of, a) stationary point source and observer, and b) co-translating point source and observer cases}
+        \label{fig:testcase_ss_tt}
+    \end{figure}
+    
+    \item Translating point source and stationary observer. This test case demonstrates the prediction with cases of non-zero relative motion between point source and observer, and thus shows the limitations of some of the derivations.
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{fig_test_cases/translating_stationary.png}
+        \caption{Illustration of translating point source and stationary observer cases}
+        \label{fig:testcase_ts}
+    \end{figure}
+    
+\end{itemize}
+
+Any error are then be quantified using the following,
+
+\begin{equation}
+    Error = \frac{\Sigma_j(p_{j,ref} - p_{j,num})^2}{\Sigma_j(p^j_{ref})^2} 
+    \label{eq:error}
+\end{equation}
+
+\clearpage
+% where the subscripts $j$, $ref$, and $num$ are the $j$-th index, reference analytical values, and the numerical integration results, respectively. 

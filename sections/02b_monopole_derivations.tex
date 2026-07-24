@@ -1,20 +1,3 @@
-\chapter{Analytical Derivation of Point Sound Sources} \label{sec:derivations}
-
-In this chapter, the derivations for density, pressure, and velocity perturbation components are described for monopole and dipole sources. These are used to validate the numerical integration of the FW-H code. By comparing the numerical output against the analytical solutions, the code's capability can be validated. For density specifically, the expression is,
-
-\begin{equation}
-    \rho'=\frac{p'}{c^2}
-    \label{eq:density}
-\end{equation}
-
-Which is valid for both monopole and dipole since there is no viscosity nor entropy generation. For pressure, generally the approach would be to convolve the pressure description for  either sources with the Green's function in 3D free-space (Appendix~\ref{app:GF}), described as
-
-\begin{equation}
-    G=\frac{\delta(g(\tau))}{4\pi r}
-    \label{eq:GreensFunction}
-\end{equation}
-
-where $g(\tau)=t-\tau-\frac{r(\tau)}{c}$ and $r(\tau)=|\bm{x}-y(\tau)|$. 
 
 \section{Analytical Solution for a Monopole} \label{subsec:Analytical Solution for a Monopole}
 

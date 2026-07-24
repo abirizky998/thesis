@@ -1,3 +1,54 @@
+\chapter{Research Project Gantt Chart} \label{app:ganttchart}
+
+The following is the Gantt Chart of the current project up to its completion. Some adjustments had to be made along the duration of the project's execution such as CFD-related parts, however, the overall project objectives and milestones remain similar.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{fig_past_reports/gantt_chart.png}
+    \caption{Gantt Chart of the research project}
+    \label{fig:GC}
+\end{figure}
+
+\chapter{Variable Derivatives} \label{app:derivatives}
+
+To derive the analytical point sources, a few definition for the derivatives are established.
+
+\begin{equation}
+    \left. \frac{\partial r}{\partial \tau} \right|_x =  -v_r
+    \label{eq:C1}
+\end{equation}
+
+\begin{equation}
+    \left. \frac{\partial M_r}{\partial \tau} \right|_x = \left( \frac{\partial M}{\partial \tau} \right)_r +
+    \frac{c(M_r^2-|M|^2)}{r}
+    \label{eq:C2}
+\end{equation}
+
+\begin{equation}
+    \left. \frac{\partial |1-M_r|}{\partial\tau} \right|_x = \frac{(1-M_r)}{|1-M_r|}
+    \left(
+    -\left( \frac{\partial M}{\partial \tau}
+    \right)_r  +
+    \frac{c(|M|^2 - M_r^2}{r}
+    \right)
+    \label{eq:C3}
+\end{equation}
+
+\begin{equation}
+    \left. \frac{\partial [Q(\tau)]_{\tau*}}{\partial\tau}\right|_x
+    = \left.
+    \left[ \frac{1}{1-M_r} \frac{\partial Q(\tau)}{\partial \tau} \right]_x
+    \right|_{\tau*}
+    \label{eq:C4}
+\end{equation}
+
+\begin{equation}
+    \left. - \frac{\partial}{\partial x_i}
+    \right|_t \int_S [Q_i]_{\tau*} dS =
+    \left. \frac{\partial}{\partial t}\right|_x \int_S \left[ \frac{Q_ir_i}{cr}\right]_{\tau*}dS + \int_S \left[ \frac{Q_ir_i}{r^2}\right]_{\tau*}dS
+    \label{eq:C5}
+\end{equation}
+
 \chapter{Permeable Surface with Retarded Time Formulation} \label{app:fwh_expansion}
 
 Given the inhomogeneous wave equation in the integral form of the FW-H equation,
@@ -147,46 +198,6 @@ Assuming no mean flow, the first term of the right hand side, $\partial X_i/\par
 \begin{equation}
     \left. \frac{\partial}{\partial t} \right|_{\textbf{x}} = \frac{1}{1-M_r} \left. \frac{\partial}{\partial \tau} \right|_{\textbf{x}}
     \label{eq:retarded_time_def}
-\end{equation}
-
-\chapter{Variable Derivatives} \label{app:derivatives}
-
-To derive the analytical point sources, a few definition for the derivatives are established.
-
-\begin{equation}
-    \left. \frac{\partial r}{\partial \tau} \right|_x =  -v_r
-    \label{eq:C1}
-\end{equation}
-
-\begin{equation}
-    \left. \frac{\partial M_r}{\partial \tau} \right|_x = \left( \frac{\partial M}{\partial \tau} \right)_r +
-    \frac{c(M_r^2-|M|^2)}{r}
-    \label{eq:C2}
-\end{equation}
-
-\begin{equation}
-    \left. \frac{\partial |1-M_r|}{\partial\tau} \right|_x = \frac{(1-M_r)}{|1-M_r|}
-    \left(
-    -\left( \frac{\partial M}{\partial \tau}
-    \right)_r  +
-    \frac{c(|M|^2 - M_r^2}{r}
-    \right)
-    \label{eq:C3}
-\end{equation}
-
-\begin{equation}
-    \left. \frac{\partial [Q(\tau)]_{\tau*}}{\partial\tau}\right|_x
-    = \left.
-    \left[ \frac{1}{1-M_r} \frac{\partial Q(\tau)}{\partial \tau} \right]_x
-    \right|_{\tau*}
-    \label{eq:C4}
-\end{equation}
-
-\begin{equation}
-    \left. - \frac{\partial}{\partial x_i}
-    \right|_t \int_S [Q_i]_{\tau*} dS =
-    \left. \frac{\partial}{\partial t}\right|_x \int_S \left[ \frac{Q_ir_i}{cr}\right]_{\tau*}dS + \int_S \left[ \frac{Q_ir_i}{r^2}\right]_{\tau*}dS
-    \label{eq:C5}
 \end{equation}
 
 \chapter{Monopole Velocity Derivations} \label{app:mono_u}

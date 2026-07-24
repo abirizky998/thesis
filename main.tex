@@ -36,6 +36,15 @@
   {50pt} % Space before the heading
   {40pt} % Space after the heading
 
+% --- HEADER & FOOTER SETUP ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clear default headers and footers
+\fancyhead[L]{\nouppercase{\textbf{\leftmark}}} % Displays the chapter name on the left
+% \fancyhead[R]{\thepage} % Displays the page number on the right
+\fancyfoot[C]{\thepage} % Optional: page number at the bottom center
+\renewcommand{\headrulewidth}{0.4pt} % Adds a line under the header
+
 \begin{document}
 %TC:ignore
 % --- TITLE PAGE ---
@@ -49,7 +58,7 @@
     {\Large \textbf{Department of Mechanical Engineering}\par}
     {\Large \textbf{Advanced Mechanical Engineering Course}\par}
 
-    \vspace{5cm}
+    \vspace{3.5cm}
     {\Large \textbf{Analytical and Computational Investigation of Noise Radiation and Propagation from Lifting Devices}\par}
     \vspace{1cm}
     {\textbf{By}\par}
@@ -58,54 +67,95 @@
     {\textbf{Bachelor of Engineering, Mechanical Engineering, Universitas Indonesia}}
 
     
-    \vspace{3cm}
+    \vspace{2.5cm}
     {A thesis submitted in partial fulfilment of the requirements for the Master of Science Degree of Imperial College London and the Diploma of Membership of Imperial College\par}
     \vspace{1cm}
     {September 2026\par}
     % Optional: uncomment the line below if you need a word count
     \vspace{1cm}
-    {Word Count: XXXX of 18000\par}
+    {Word Limit: 18000\par}
+    {Word Count: XXXX}
     
     \vfill
 \end{titlepage}
 
+\pagenumbering{roman}
+
 % --- ABSTRACT ---
-\begin{abstract}
-\addcontentsline{toc}{chapter}{Abstract}
-\normalsize
-\onehalfspacing
+% \begin{abstract}
+% \thispagestyle{plain}
+% \addcontentsline{toc}{chapter}{Abstract}
+% \normalsize
+% \onehalfspacing
 % \noindent Open rotor aeroengines offer significant improvements in propulsion efficiency, but expose fan-generated noise directly to the atmosphere. Predicting this noise requires robust acoustic solvers. This report outlines the preliminary development and validation of an analytical Ffowcs Williams-Hawkings (FW-H) code using a permeable surface, retarded-time formulation. The numerical integration logic was evaluated against exact analytical derivations for both monopole and dipole sources under stationary, co-translating, and relative-motion conditions.\\
 
 % \noindent The code demonstrated good accuracy ($<1\%$ error) for monopole sources, in which it captures convective terms and Doppler phase shifting, given sufficient grid and temporal resolutions. For dipole sources, derived analytical solutions were mathematically proven to fail when physical assumptions are violated. To bypass these limitations, a dual-monopole approximation was implemented and validated. This approach is sufficiently robust across all regimes, as it preserves the convective amplification factors that explicit Taylor expansions omit that was required when defining the dipole source term. While some validation work is still necessary, future work will move to a hybrid computational-analytical framework, using Unsteady Reynolds Averaged Navier Stokes (URANS)-FW-H hybrid to predict open rotor noise generation and propagation.
-\end{abstract}
+% \end{abstract}
+
+\pagenumbering{roman}
+
+% --- ABSTRACT ---
+\clearpage
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\thispagestyle{plain}
+\normalsize
+\onehalfspacing
+\noindent Open rotor aeroengines offer significant improvements in propulsion efficiency, but expose fan-generated noise directly to the atmosphere. Predicting this noise requires robust acoustic solvers. This report outlines the preliminary development and validation of an analytical Ffowcs Williams-Hawkings (FW-H) code using a permeable surface, retarded-time formulation. The numerical integration logic was evaluated against exact analytical derivations for both monopole and dipole sources under stationary, co-translating, and relative-motion conditions.\\
+
+\noindent The code demonstrated good accuracy ($<1\%$ error) for monopole sources, in which it captures convective terms and Doppler phase shifting, given sufficient grid and temporal resolutions. For dipole sources, derived analytical solutions were mathematically proven to fail when physical assumptions are violated. To bypass these limitations, a dual-monopole approximation was implemented and validated. This approach is sufficiently robust across all regimes, as it preserves the convective amplification factors that explicit Taylor expansions omit that was required when defining the dipole source term. While some validation work is still necessary, future work will move to a hybrid computational-analytical framework, using Unsteady Reynolds Averaged Navier Stokes (URANS)-FW-H hybrid to predict open rotor noise generation and propagation.
 
 \newpage
 
+\newpage
+
+\include{sections/00a_acknowledgements}
+
 % --- TABLE OF CONTENTS ---
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Contents}
 \tableofcontents
 \listoffigures
 \clearpage
 
 % --- NOMENCLATURE ---
-\include{sections/00_nomenclature}
+\include{sections/00b_nomenclature}
 %TC:endignore
-
+\clearpage
+\pagenumbering{arabic}
 % --- CONTENT -----
 \input{sections/01_introduction}
-\input{sections/02_Literature_Review}
-\input{sections/03_Monopole_Derivations}
-\input{sections/04_Dipole_Derivations}
-\input{sections/05_Monopole_Validations}
-\input{sections/06_Dipole_Validations}
-\input{sections/07_directivity}
+
+\input{sections/02a_background_validation}
+\input{sections/02b_monopole_derivations}
+\input{sections/02c_monopole_validations}
+\input{sections/02d_dipole_derivations}
+\input{sections/02e_dipole_validations}
+\input{sections/02f_directivity}
+\input{sections/02g_concluding_summary}
+
+\input{sections/03a_numerical_fwh_sensitivity}
+\input{sections/03b_simple_source_sensitivity}
+\input{sections/03c_multipole_sensitivity}
+
 \input{sections/08_discussion}
 \input{sections/09_conclusions}
 \input{sections/10_future_work}
+
+
+% \input{sections/XX_Literature_Review}
 
 %TC:ignore
 % ------ Gen AI -------
 \clearpage
 \input{sections/99_genAI}
+
+% ------ REFERENCES --------
+\clearpage
+\bibliographystyle{ieeetr}
+\bibliography{references}
+%TC:endignore
 
 % ------ APPENDICES -------
 \clearpage
@@ -114,11 +164,5 @@
 
 \input{sections/11_appendices}
 \end{appendices}
-
-% ------ REFERENCES --------
-\clearpage
-\bibliographystyle{ieeetr}
-\bibliography{references}
-%TC:endignore
 
 \end{document}

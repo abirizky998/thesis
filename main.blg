@@ -5,44 +5,47 @@ A level-1 auxiliary file: sections/00a_acknowledgements.aux
 A level-1 auxiliary file: sections/00b_nomenclature.aux
 The style file: ieeetr.bst
 Database file #1: references.bib
-You've used 21 entries,
+Warning--empty institution in Dunn2014
+Warning--empty institution in Envia2014
+You've used 25 entries,
             1876 wiz_defined-function locations,
-            623 strings with 7211 characters,
-and the built_in function-call counts, 4668 in all, are:
-= -- 453
-> -- 159
+            645 strings with 7814 characters,
+and the built_in function-call counts, 5315 in all, are:
+= -- 501
+> -- 196
 < -- 0
-+ -- 63
-- -- 42
-* -- 297
-:= -- 662
-add.period$ -- 26
-call.type$ -- 21
-change.case$ -- 15
++ -- 77
+- -- 52
+* -- 348
+:= -- 769
+add.period$ -- 30
+call.type$ -- 25
+change.case$ -- 21
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 265
-empty$ -- 483
-format.name$ -- 42
-if$ -- 1160
+cite$ -- 27
+duplicate$ -- 303
+empty$ -- 555
+format.name$ -- 52
+if$ -- 1305
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 19
-newline$ -- 71
-num.names$ -- 19
-pop$ -- 80
+int.to.str$ -- 25
+missing$ -- 21
+newline$ -- 83
+num.names$ -- 23
+pop$ -- 101
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 157
+skip$ -- 164
 stack$ -- 0
 substring$ -- 244
-swap$ -- 92
+swap$ -- 94
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 36
-width$ -- 23
-write$ -- 196
+warning$ -- 2
+while$ -- 40
+width$ -- 27
+write$ -- 229
+(There were 2 warnings)

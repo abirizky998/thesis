@@ -835,11 +835,6 @@ INPUT ./fig_past_reports/fwh_domain_observer.png
 INPUT fig_past_reports/fwh_domain_observer.png
 INPUT ./fig_past_reports/fwh_domain_observer.png
 INPUT ./fig_past_reports/fwh_domain_observer.png
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvr8c.tfm
 INPUT ./sections/02a_background_validation.tex
 INPUT ./sections/02a_background_validation.tex
 INPUT ./sections/02a_background_validation.tex
@@ -847,7 +842,6 @@ INPUT sections/02a_background_validation.tex
 INPUT ./sections/02a_background_validation.tex
 INPUT ./sections/02a_background_validation.tex
 INPUT sections/02a_background_validation.tex
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/helvetic/phvr8c.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvr7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvro7t.tfm
@@ -872,6 +866,11 @@ INPUT ./fig_monopole/fwh_domain_observer_arrows.png
 INPUT fig_monopole/fwh_domain_observer_arrows.png
 INPUT ./fig_monopole/fwh_domain_observer_arrows.png
 INPUT ./fig_monopole/fwh_domain_observer_arrows.png
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvr8c.tfm
 INPUT ./fig_test_cases/stationary_stationary.png
 INPUT ./fig_test_cases/stationary_stationary.png
 INPUT fig_test_cases/stationary_stationary.png
@@ -883,6 +882,7 @@ INPUT ./fig_test_cases/translating_translating.png
 INPUT fig_test_cases/translating_translating.png
 INPUT ./fig_test_cases/translating_translating.png
 INPUT ./fig_test_cases/translating_translating.png
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/helvetic/phvr8c.vf
 INPUT ./fig_test_cases/translating_stationary.png
 INPUT ./fig_test_cases/translating_stationary.png
 INPUT fig_test_cases/translating_stationary.png

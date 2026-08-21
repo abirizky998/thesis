@@ -4,7 +4,7 @@
 
 \section{Sensitivity Analysis Background and Methodology} \label{sec:sensitivity_analysis_method}
 
-With the FW-H code validated, the next step before implementing it into CFD data is establishing its sensitivity to spatial and temporal discretisation. While the validation cases touched on these effects, this section defines the discretisation parameters that serve as the baseline for the subsequent sensitivity analysis.
+With the FW-H code validated, the next step before implementing it into CFD data is establishing its sensitivity to spatial and temporal discretisation. While the moonopole validation cases touched on the effects of discretisation, this section defines the discretisation parameters that serve as the baseline for the subsequent sensitivity analysis.
 
 \subsection{Definition of Non-Dimensional Discretisation Parameters} \label{subsec:PX_definition}
 XXXX MORE LITERATURE FOR THE DISCRETISATION RESOLUTIONS \\
@@ -25,17 +25,17 @@ the spatial resolution parameter $X$ is defined as the wavelength divided by the
 where,
 
 \begin{equation*}
-    d = \frac{2\pi R}{N}
+    d = \frac{2\pi R}{N_{grid}} \quad \text{and} \quad \Delta t = \frac{T}{N_{time}}
 \end{equation*}
 
-which denotes the circumferential distance between grid points in a spherical domain, as shown in Figure \ref{fig:domain}. These baseline definitions are sufficient for stationary sources, but require modification for high-speed kinematics, such as open rotor blades, due to Doppler effect. The relative motion between the source and the observer compresses or expands the wave received by the observer, therefore, introducing a Mach number scaling factor, $1\pm M$ is required to both the perceived wavelength and period. Therefore, the parameters $X$ and $P$ must be updated to account for the Doppler-shifts, redefining $X$ as the Doppler-shifted wavelength divided by the grid spacing, and $P$ as the Doppler shifted period divided by the time-step size,
+It should be noted that these definitions are based on the freestream value of the wave parameters, i.e., not accounting for any Doppler shifting effects. As the wave compresses at high speeds, the required discretisation parameters need to be adjusted, and therefore, the values are higher than for stationary, freestream cases. The scaling factor to account for this is simply the Doppler factor, $1-M$, which scales the resolution by the Mach number at which the source is moving. Therefore, when accounting for this effect, the grid and time-step sizing are redefined as,
 
 \begin{equation}
-    X =\frac{\lambda_s(1-M)}{d}  \quad \text{and} \quad P= \frac{T_s(1-M)}{\Delta t} 
+    N_{grid}=\frac{2\pi R X}{\lambda_s (1-M)}  \quad \text{and} N_{time}= \frac{T_s(1-M)}{P} 
     \label{eq:doppler_PX}
 \end{equation}
 
-It is important to note that these parameters are imperfect as they provide a nominal baseline rather than an exact local measurement. For example, when using an analytical sound source, the code uses a spherical domain constructed with a latitude-longitude grid, meaning the grid spacing are non-uniform across the longitude. Furthermore, when applying the Advanced Time formulation in CFD cases, the varying emission times project onto a non-uniform observer time. Therefore, the sensitivity tests conducted in this chapter uses the Retarded Time provide a uniform temporal discretisation to quantify the code's limits to define the source CFD's temporal discretisation.
+It is also important to note that these parameters are imperfect as they provide a nominal baseline rather than an exact local measurement. For example, when using an analytical sound source, the code uses a spherical domain constructed with a latitude-longitude grid, meaning the grid spacing are non-uniform across the longitude. Furthermore, when applying the Advanced Time formulation in CFD cases, the varying emission times project onto a non-uniform observer time.
 
 In quantifying the code's sensitivity to the discretisation parameters, the same error quantification is used as the one used in Chapter \ref{ch:background_validation}, i.e., using the L2-norm to compare the instantaneous values of the analytical solution and the numerical integration results. After errors at a given $P$ and $X$ combinations are calculated, a 2D matrix is presented to provide the range of error at the given parameter ranges. This approach is selected as it gives a unifying approach to the error quantification as the validation methodology, as well as to provide an easily understood quantification of the code's sensitivity.
 

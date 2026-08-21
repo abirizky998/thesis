@@ -1,62 +1,137 @@
 % !TEX root = ../main.tex
 
 \section{Validation of the FW-H Method for Monopole Sources} \label{sec:monopole_validation}
-The first investigation are of monopole with stationary, as well as co-translating source and observer. This gives a baseline sensitivity of different control surface grid resolutions and time step sizing. The radius of the control surface is set to $1m$, and the observer is located at $[50,50,0]$. In the the co-translation case, the points are translating at $150m/s$ along the x-direction.
+The point source in each case is prescribed with source strength of $Q(\tau)=\sin(10\tau)$, and is placed at the origin. Speed of sound, $c$, and the freestream air density $\rho_0$ are set to $340m/s$ and $1.2kg/m^3$, respectively. The Retarded and Advanced Time algorithms are both tested. 
 
-For grid sensitivity, the control surface is discretised with $40 \times 40$, $15 \times 15$, and $5\times5$ grids and the time step size is set to $dt=0.005s$. Conversely, for the time step sizing test, the grids are set to $40\times40$ resolution while the time steps are sized to $dt=0.005s$, $dt=0.025s$, and $dt=0.125s$, which correspond to $200 Hz$, $40 H$z, and $8 Hz$ sampling frequencies, respectively.
+Three cases are defined to validate the monopole; the co -stationary, co-translating, and the relative motion cases. These cases provide an understanding of the code's ability in predicting simple sounds. The observer is initially located at $[10,10,0]$ for the co-stationary and co-translating cases, and at $[150,10,0]$ for the relative motion case. In the translating cases, the relevant points are moving at Mach 0.5 along the x-direction. The test cases are summarised in Table \ref{tab:monopole_validation_test_case} below.
+
+\begin{table}[H]
+    \centering
+    \caption{Summary of Monopole Validation Test Cases}
+    \label{tab:monopole_validation_test_case}
+    \begin{tabular}{p{2.8cm} p{5cm} p{2cm} p{2cm} p{2.5cm} l}
+        \toprule
+        \textbf{Case Name} & \textbf{Time Algorithm} &\textbf{$M_{source}$} & \textbf{$M_{observer}$} & \textbf{$x_{0,observer}$} \\
+        \midrule
+        Co-Stationary & Retarded \& Advanced & [0, 0, 0] & [0, 0, 0] & [10, 10, 0] \\
+        Co-Translating & Retarded & [0.5, 0, 0] & [0.5, 0, 0] & [10, 10, 0] \\
+        Translating & Retarded & [0.5, 0, 0] & [0, 0, 0] & [150, 10, 0] \\
+        Translating & Advanced & [0, 0, 0] & [0.5, 0, 0] & [150, 10, 0] \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+The radius of the control surface is set to $5m$ and the surface is discretised to capture the pressure wavelengths at 275, 100, and 35 grid points per wavelength, which correspond to $40 \times 40$, $15 \times 15$, and $5\times5$ grid resolutions, respectively. Similarly, the temporal discretisation is set to capture frequencies at 30, 15, and 5 time steps per wave period. 
+
+\subsection{Co-Stationary Monopole Case} \label{subsec:stationary_monopole_validation}
+
+Starting with the co-stationary case using the Retarded Time algorithm, it can be seen from Figure \ref{fig:monopole_SS_RT} below that the numerical FW-H method agrees well with the analytical solution; provided that the discretisation resolutions resolve the pressure waves radiated by the point source sufficiently. An under-prediction of the amplitudes are observed when using coarser grid resolutions, while using coarser temporal resolutions causes the FW-H prediction to lag behind the analytical solutions. 
 
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.495\textwidth}
-        \includegraphics[width=\textwidth]{fig_monopole/monopole_stationary_dx.png}
+        \includegraphics[width=\textwidth]{fig_monopole/mono_stat_RT_dt.png}
         \caption{}
-        \label{fig:monopole_ss_dx}
+        \label{fig:monopole_ss_RT_dt}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.495\textwidth}
-        \includegraphics[width=\textwidth]{fig_monopole/monopole_stationary_dt.png}
+        \includegraphics[width=\textwidth]{fig_monopole/mono_stat_RT_dx.png}
         \caption{}
-        \label{fig:monopole_ss_dt}
+        \label{fig:monopole_ss_RT_dt}
     \end{subfigure}
+    \caption{\centering Co-stationary monopole case using the retarded time algorithm, varying the a) time-step sizing, and b) grid sizing}
+    \label{fig:monopole_SS_RT}
+\end{figure}
 
-    \vspace{0.25cm}
+Regarding the amplitude under-prediction, it cannot be attributed to the code's inability to predict the wavelengths; as the wavelength in this case is $\sim213.6$ meters, while the coarsest $5\times5$ grid resolution resolves this to 35 points per wavelength. Instead, this is largely a geometric error caused by the coarser grids that is approximating the control surface sphere as a polygon. On the other hand, the coarsest temporal resolution in this case was indeed unable to predict the waves well enough due to the insufficient temporal resolution.
 
+Moving on to the Advanced Time algorithm, it should be noted that due to the nature of this algorithm, the sound signal received at the observer requires some post-processing work. This post-processing removes the first and last period of the observer signal which reads as zero. This post-processing was done prior to any error calculations or plotting; and therefore, all the results presented here have been cleaned up. 
+
+\begin{figure}[H]
+    \centering
     \begin{subfigure}[b]{0.495\textwidth}
-        \includegraphics[width=\textwidth]{fig_monopole/monopole_moving_so_dx.png}
+        \includegraphics[width=\textwidth]{fig_monopole/mono_stat_AT_dt.png}
         \caption{}
-        \label{fig:monopole_tt_dx}
+        \label{fig:monopole_ss_AT_dt}
     \end{subfigure}
     \hfill
-        \begin{subfigure}[b]{0.495\textwidth}
-        \includegraphics[width=\textwidth]{fig_monopole/monopole_moving_so_dt.png}
+    \begin{subfigure}[b]{0.495\textwidth}
+        \includegraphics[width=\textwidth]{fig_monopole/mono_stat_AT_dx.png}
+        \caption{}
+        \label{fig:monopole_ss_AT_dt}
+    \end{subfigure}
+    \caption{\centering Co-stationary monopole case using the advanced time algorithm, varying the a) time-step sizing, and b) grid sizing}
+    \label{fig:monopole_SS_AT}
+\end{figure}
+
+As with the Retarded Time results, the numerical integral using the Advanced Time method generally has a good agreement with the analytical solution. The errors are relatively higher with this method due to the time interpolation at the observer points; an inherent feature of the Advanced Time approach as described in Subsection \ref{subsec:FWH_description}. The effects of discretisation resolutions are also relatively similar to the Retarded Time solutions, where coarser time-step sizes somewhat lags behind the analytical solution, while the coarser grids under-predict the amplitude due to geometric error.
+
+\subsection{Co-Translating Monopole Case} \label{subsec:cotranslating_monopole_validation}
+
+The co-translating case only uses the Retarded Time algorithm as its purpose is to demonstrate how the signal is received at the observer when compared to the co-stationary case. 
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.495\textwidth}
+        \includegraphics[width=\textwidth]{fig_monopole/mono_cotrans_dt.png}
         \caption{}
         \label{fig:monopole_tt_dt}
     \end{subfigure}
-
-    \caption[Stationary and zero co-translating monopole test cases]{\centering Stationary and co-translating monopole test cases, a) stationary with varied grid sizing, and b) stationary with varied time-stepping sizing, c) co-translating with varied grid sizing, and d) co-translating  with varied time-stepping sizing}
-    \label{fig:monopole_zero_relative}
+    \hfill
+    \begin{subfigure}[b]{0.495\textwidth}
+        \includegraphics[width=\textwidth]{fig_monopole/mono_cotrans_dx.png}
+        \caption{}
+        \label{fig:monopole_tt_dt}
+    \end{subfigure}
+    \caption{\centering Co-translating monopole case using the retarded time algorithm, varying the a) time-step sizing, and b) grid sizing}
+    \label{fig:monopole_TT}
 \end{figure}
 
-For the relative motion case, the grid and time-stepping sensitivity set ups remain the same. The cases differ by translating only the source at $150m/s$ along the x-axis, while the observer remains stationary.
+Comparing these results with the co-stationary cases (Figure \ref{fig:monopole_SS_RT}) shows a distinct phase difference and amplitude, despite both scenario having zero relative Mach number and the distance between the source and observer is kept the same. In the co-translating case, the source moves through the quiescent fluid medium, which causes a phase shift of $\sim\pi/2$ and an amplitude increase due to the convective term. Furthermore, the emission distance $r$ in the retarded time, $\tau = t - r/c$, differs from the geometric distance because both points are moving through the medium during the propagation time. In terms of discretisation resolutions, the errors between this co-translating case and the retarded time co-stationary case are roughly the same, which suggest that despite there being some Doppler shifting due to the motion of the source, the observer's equal motion cancels out the errors which may arise.
+
+\subsection{Translating Monopole Case} \label{subsec:translating_monopole_validation}
+
+For the translation case, the set up for the two time algorithms are slightly different, as summarised in Table \ref{tab:monopole_validation_test_case}. In the Retarded Time case, the source moves along the X-axis to the positive direction, while the observer remains at its initial position; while in the Advanced Time case, the source remains stationary while the observer moves parallel to the X-axis to the negative direction. One reason this was done is, at the time of the writing of this work, the Advanced Time algorithm does not support the permeable surface's motion tracking of the source's motion. This means, while the source can move within the permeable surface, the surface must remain stationary in space; which is also the reason why the co-translating case only was tested the Retarded Time algorithm. Another reason for this differentiated approach is to demonstrate the wave compression and expansion due to Doppler shifts, which will be elaborated in the Advanced Time results.
 
 \begin{figure}[H]
     \begin{subfigure}[b]{0.495\textwidth}
-        \includegraphics[width=\textwidth]{fig_monopole/monopole_moving_s_dx.png}
+        \includegraphics[width=\textwidth]{fig_monopole/mono_trans_RT_dt.png}
         \caption{}
-        \label{fig:monopole_ts_dx}
+        \label{fig:monopole_ts_RT_dx}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.495\textwidth}
-        \includegraphics[width=\textwidth]{fig_monopole/monopole_moving_s_dt.png}
+        \includegraphics[width=\textwidth]{fig_monopole/mono_trans_RT_dx.png}
         \caption{}
-        \label{fig:monopole_ts_dt}
+        \label{fig:monopole_ts_RT_dx}
     \end{subfigure}
-    \caption[Translating monopole with stationary observer test case]{\centering Translating monopole with stationary observer test case, a) with varied grid sizing, and b) with varied time-step sizing}
-    \label{fig:monopole_relative}
+    \caption[Translating monopole with stationary observer test case]{\centering Translating monopole with stationary observer test case using the Retarded Time method, a) with varied time-step sizing, and b) with varied grid sizing}
+    \label{fig:monopole_TS_RT}
 \end{figure}
 
-Comparing the first two cases (Figure \ref{fig:monopole_zero_relative}) shows a distinction in amplitude and phase, despite both scenarios having zero relative Mach number ($M_r=0$). In the co-translating case, the source moves through the quiescent fluid medium, which causes a phase shift of $\sim\pi/2$ and pressure increase due to the convective term. Furthermore, the emission distance $r$ in the retarded time, $\tau = t - r/c$, differs from the geometric distance because both points are moving through the medium during the propagation time. The third case demonstrates the effect of relative Mach number. In Figure \ref{fig:monopole_relative} the Doppler effect causes the acoustic frequency and pressure amplitude received by the observer to increase as the source approaches ($0\leq t\leq 0.33s$), and decrease as it moves away ($t>0.33s$).
+Yadda yadda analysis RT
 
-In the grid resolution comparisons, while the finest resolution of $40\times40$ has very good agreement with the analytical solutions at less than $1\%$ error in all cases, the errors progressively increase to $\sim4\%$ and $\sim 30\%$, for coarser resolutions. The plots show at lower resolution, the numerical results could not capture the peaks and troughs of the harmonic wave, causing dissipation. Given the acoustic wavelength is $\sim214m$ (from the prescribed frequency and speed of sound values), the coarsest grid has an arc distance between two nodes of 1.25 meters. The errors shown in the grid sensitivities are mainly due to geometric error of the spherical domain, rather than the grids not being able to capture the wavelengths. This shows that this grid resolution is sufficient given the input and control surface radius.
+This relative motion case demonstrates the effect of relative Mach number. In Figure \ref{fig:monopole_TS_RT} the Doppler effect causes the acoustic frequency and pressure amplitude received by the observer to increase as the source approaches ($0\leq t\leq 0.33s$), and decrease as it moves away ($t>0.33s$).
 
-The time step sensitivity study exhibits similar trends. The $dt=0.005s$ and $dt=0.025s$ sizes yield errors at less than $1\%$ and $2\%$, respectively. However, largest time-step size of $dt=0.125s$ (an $8Hz$ sampling frequency), is insufficient to capture the input acoustic frequency of $10rad/s$ or $\sim1.6Hz$, as it can only sample at five times the input. This can be seen in the lags in the plots as the numerical solution attempted to keep up with the wave.
+Begin AT check
+
+
+\begin{figure}[H]
+    \begin{subfigure}[b]{0.495\textwidth}
+        \includegraphics[width=\textwidth]{fig_monopole/mono_trans_AT_dt.png}
+        \caption{}
+        \label{fig:monopole_ts_AT_dx}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.495\textwidth}
+        \includegraphics[width=\textwidth]{fig_monopole/mono_trans_AT_dx.png}
+        \caption{}
+        \label{fig:monopole_ts_AT_dx}
+    \end{subfigure}
+    \caption[Translating observer with stationary monopole test case]{\centering Translating observer with stationary monopole test case using the Advanced Time method, a) with varied time-step sizing, and b) with varied grid sizing}
+    \label{fig:monopole_TS_AT}
+\end{figure}
+
+yadda yadda AT analysis
+

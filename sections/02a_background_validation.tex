@@ -1,13 +1,13 @@
 % !TEX root = ../main.tex
 
-\chapter{Background and Validation of the FW-H Method} \label{ch:background_validation}
+\chapter{Development and Validation of the FW-H Method} \label{ch:background_validation}
 
-In this chapter, the FW-H method as well as the analytical methods by which it is validated are described. The formulation used in the numerical FW-H method is described in Section \ref{sec:FWH_desc} below along with the description of how the computer code works. The following sections will then describe the test cases used to validate the code; describe the analytical solutions of the monopole and dipole used to compare against the numerical solution; and finally, the validation data is presented to build confidence in the numerical code itself.
+This chapter describes the details of the FW-H method and the analytical frameworks used in its validation. The formulation used in the numerical FW-H method is described in Section \ref{sec:FWH_desc} below along with the description of how the computer code works. The following sections will then describe the test cases used to validate the code; describe the analytical solutions of the monopole and dipole used to compare against the numerical solution; and finally, the validation data is presented to build confidence in the numerical code itself.
 
 \section{Description of the FW-H Method}\label{sec:FWH_desc}
 \subsection{Derivation of the FW-H Equation}\label{subsec:FWH_derivation}
 
-To predict the open rotor noise, the FW-H equation in its permeable surface form provides a useful basis for noise prediction. This formulation is based on the governing laws of fluid motion, and the descriptions provided below are based on the original paper by Ffowcs Williams and Hawkings \cite{FfowcsWilliams1969}. Consider a control surface \textit{S}, in which contains a combination of fluid and solid boundaries, while the region outside contains only fluid. \textit{S} moves with a velocity $v$ and is defined by the equation $f(x,t)=0$, the following relationship then hold
+To predict the open rotor noise, the FW-H equation in its permeable surface form provides a useful basis for noise prediction. This formulation is based on the governing laws of fluid motion, and the descriptions provided below are based on the original paper by Ffowcs Williams and Hawkings \cite{FfowcsWilliams1969}. Consider a control surface \textit{S}, which contains a combination of fluid and solid boundaries, while the region outside contains only fluid. The control surface \textit{S} moves at a velocity $v$ and is defined by the equation $f(x,t)=0$, the following relationship then hold
 
 \begin{gather}
     f < 0, H(f) = 0 \nonumber \\
@@ -24,7 +24,7 @@ To predict the open rotor noise, the FW-H equation in its permeable surface form
     \label{fig:heaviside}
 \end{figure}
 
-Generalised flow variables are denoted by an overbar. Outside of the surface, the variables are equal to the real flow variables, while inside they are assigned the value zero, hence are discontinuous acorss \textit{S}. Manipulating the mass and momentum conservation equations,
+Generalised flow variables are denoted by an overbar. Outside of the surface, the variables are equal to the real flow variables, while inside they are assigned the value zero, therefore, there is a discontinuity across the surface \textit{S}. Manipulating the mass and momentum conservation equations,
 
 \begin{equation}
     \begin{gathered}
@@ -52,7 +52,7 @@ subtracting the divergence \ref{eq:momentum_heaviside} from the time derivative 
     \label{eq:FWH_diff}
 \end{equation}
 
-Which is the differential form of the FW-H equation, and is the equation governing the generation and propagation of sound. Converting this differential form into an equivalent integral form is done using Green's function. A coordinate change from the fixed one to a moving one with the control surface $\eta$ is performed so the sources are at rest in the $\eta$ space. The Jacobian for the coordinate change is $J$ which represents the ratio of volume elements in the $\eta$ and $y$ spaces. Performing the steps above gives the inhomogeneous wave equation in the integral form of the FW-H equation,
+Which is the differential form of the FW-H equation, and is the governing equation for the generation and propagation of sound. Converting this differential form into an equivalent integral form is done using Green's function (see Appendix \ref{app:GF}). A coordinate change from the fixed one to a moving one with the control surface $\eta$ is performed so the sources are at rest in the $\eta$ space. The Jacobian for the coordinate change is $J$ which represents the ratio of volume elements in the $\eta$ and $y$ spaces. Performing the steps above gives the inhomogeneous wave equation in the integral form of the FW-H equation,
 
 \begin{equation}
     \begin{split}
@@ -64,7 +64,7 @@ Which is the differential form of the FW-H equation, and is the equation governi
     \label{eq:FWH}
 \end{equation}
 
-The first RHS term, the quadrupole, is not dealt with explicitly \cite{Parry1988, Hanson1985} as it is more significant for transonic and supersonic Mach numbers \cite{FfowcsWilliams1969, Ffowcs1969}. By choosing a sufficiently large permeable surface, the quadrupole contributions outside of this surface is negligible,
+The first right-hand side term, the quadrupole, is not dealt with explicitly \cite{Parry1988, Hanson1985} as it is more significant for transonic and supersonic Mach numbers \cite{FfowcsWilliams1969, Ffowcs1969}. By choosing a sufficiently large permeable surface, their contributions outside of this surface are negligible,
 
 \begin{equation}
     \begin{split}
@@ -82,7 +82,7 @@ The first RHS term, the quadrupole, is not dealt with explicitly \cite{Parry1988
     L_i=p_{ij}\textbf{n}_j+pu_i(u_{\textbf{n}}-v_{\textbf{n}})
 \end{equation*}
 
-Considering an undistorted control surface that translates at a constant and subsonic velocity, the retarded time formulation, as described by Brentner and Farassat \cite{Brentner1998} is,
+Considering an undistorted control surface that translates at a constant and subsonic velocity, as described by Brentner and Farassat \cite{Brentner1998} is,
 
 \begin{equation}
 \begin{split}
@@ -96,35 +96,116 @@ Considering an undistorted control surface that translates at a constant and sub
 \label{eq:fwh_full_expansion}
 \end{equation}
 
-The retarded time are calculated implicitly via the Newton-Raphson root-finding method. 
+which is the numerical integration that is used by the numerical FW-H code to resolve the sound pressure at the observer locations. The first two terms describe the sound by monopole sources and the last three terms describe the sound by dipole sources.
 
 \subsection{Description of the FW-H Code} \label{subsec:FWH_description}
 The FW-H code was written in Fortran 90 to implement the calculations computationally using equation \ref{eq:fwh_full_expansion}. The program is summarised in the figure below,
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\linewidth]{fig_misc/FWH_Flowchart.png}
-    \label{fig:fwh_flowchart}
+    \resizebox{0.78\textwidth}{!}{
+    \begin{tikzpicture}[
+      node distance=0.7cm and 0.5cm,
+      process/.style={rectangle, draw, thick, text centered, text width=3.6cm, minimum height=0.9cm, rounded corners, font=\small},
+      decision/.style={diamond, draw, thick, text centered, text width=2.5cm, inner sep=-2pt, font=\small},
+      line/.style={draw, thick, -Latex}
+    ]
+
+    % Initial steps
+    \node (init) [process] {Initialisation\\(MPI, Parameters)};
+    \node (setup) [process, below=of init] {Observer \\(Point/Scatter/Sphere) \& Grid Setup\\ (Custom/Sphere Mesh)};
+    \node (datatype) [decision, below=of setup] {Sound Source?};
+
+    % CFD Branch
+    \node (cfd_adv) [process, left=1.2cm of datatype] {CFD (ASCII/HADES)};
+    \node (cfd_loop) [process, below=of cfd_adv] {\textbf{Advanced Time}\\Loop Source Time \& Nodes (Using CFD Flow Variables at Each Nodes)};
+    \node (cfd_interp) [process, below=of cfd_loop] {Calculate Observer Time $t_{obs}$ \& Interpolate Time-Steps};
+
+    % Analytical Branch
+    \node (src_def) [process, right=1.2cm of datatype] {Analytical Source\\(Define Point Kinematics/Waves)};
+    \node (alg_type) [decision, below=of src_def] {Time\\Integration?};
+
+    % Analytical Advanced
+    \node (src_adv) [process, below left=0.6cm and -0.6cm of alg_type] {\textbf{Advanced Time}\\Loop Source Time \& Nodes \\ Sample Point Source Properties};
+    \node (src_adv_interp) [process, below=of src_adv] {Calculate Observer Time $t_{obs}$ \& Interpolate Time-Steps};
+
+    % Analytical Retarded
+    \node (src_ret) [process, below right=0.6cm and -0.6cm of alg_type] {\textbf{Retarded Time}\\Loop Observer Time \& Nodes \\ Sample Point Source Properties};
+    \node (src_ret_nr) [process, below=of src_ret] {Calculate Retarded Time $\tau$ via Newton-Raphson};
+
+    % Merge: Integration
+    \node (integration) [process, text width=8cm, below=9.5cm of datatype] {Calculate FW-H Integrands \& Sum Observer Pressure};
+
+    % Postproc
+    \node (postproc) [decision, below=of integration] {Post-processing?};
+    \node (dft) [process, right=of postproc] {Compute DFT};
+    \node (output) [process, below=of postproc] {Write Output Files\\Program Termination};
+
+    % Routing
+    \draw [line] (init) -- (setup);
+    \draw [line] (setup) -- (datatype);
+
+    \draw [line] (datatype) -- node[above, font=\footnotesize] {CFD} (cfd_adv);
+    \draw [line] (cfd_adv) -- (cfd_loop);
+    \draw [line] (cfd_loop) -- (cfd_interp);
+    \draw [line] (cfd_interp) |- (integration.west);
+
+    \draw [line] (datatype) -- node[above, font=\footnotesize] {Source} (src_def);
+    \draw [line] (src_def) -- (alg_type);
+
+    \draw [line] (alg_type) -| node[above, near start, font=\footnotesize] {Adv.} (src_adv);
+    \draw [line] (src_adv) -- (src_adv_interp);
+    \draw [line] (src_adv_interp) -- (src_adv_interp |- integration.north);
+
+    \draw [line] (alg_type) -| node[above, near start, font=\footnotesize] {Ret.} (src_ret);
+    \draw [line] (src_ret) -- (src_ret_nr);
+    \draw [line] (src_ret_nr) |- (integration.east);
+
+    \draw [line] (integration) -- (postproc);
+    \draw [line] (postproc) -- node[above, font=\footnotesize] {Yes} (dft);
+    \draw [line] (dft) |- (output);
+    \draw [line] (postproc) -- node[right, font=\footnotesize] {No} (output);
+
+    \end{tikzpicture}
+    }
+    \caption{FW-H code flowchart: the code can receive both CFD data and analytical point sources as input, while using either advanced time or retarded time integration approaches}
+    \label{fig:fwh_flowchart_tikz}
 \end{figure}
 
-The ambient flow properties are first defined to be used as reference values. The code then checks whether the input is 'Source' or 'ASCII/HADES'; the former uses the analytical point source that will be described in the following sections, and the latter uses CFD data as input and uses its grid
+The ambient flow properties are first defined to be used as reference values. The code then checks whether the input sound source is an analytical point source, (simply referred to as, "Source" in the code) or discrete CFD input data (referred to as "ASCII/HADES"). The analytical point source will be described in the following sections and is used for the validation and sensitivity analyses conducted in this chapter and Chapter \ref{ch:sensitivity_analysis} as a reference value against which the numerical results are compared. CFD data is used in the Chapter \ref{ch:open_rotor} following the validation and sensitivity analysis of the FW-H code.
+
+Following the source definition, the time integration approach is defined. Two time integration methodologies are implemented:
+\begin{enumerate}
+    \item \textbf{The Retarded Time Method:} This approach is only available for the point sources. It iterates over a uniform grid of the observer's reception time, $t$, and implicitly calculates the corresponding source emission time $\tau$. Because the distance between the source and observer, $r(\tau)$, is a function of an unknown emission time, the retarded time, $\tau=t-r(\tau)/c$ is resolved iteratively using a Newton-Raphson root-finding algorithm \cite{TingChar2024}.
+    \item \textbf{The Advanced Time Method:} Also known as source-dominant formulation \cite{casalino-2001}, this approach is compatible with both point sources and CFD inputs. As $\tau$ is known in this method, it instead iterates over the source's discrete emission times and computes the reception time at the observer $t=\tau+r(\tau)/c$. Because the motion of the sources may be non-uniform, the reception times are interpolated onto a uniform observer time grid.
+\end{enumerate}
+
+Following the time integration, the surface integration in Equation \ref{eq:fwh_full_expansion} is resolved on the permeable surface grids to predict the observer acoustic pressure at time $\tau$ using a Riemann summation. This integration is performed at every time step to resolve the acoustic pressure time history at the observer location. Finally, the code can optionally post-process the time history data using a Discrete Fourier Transform (DFT).
+
+It should be noted that as the surface integration and the time-marching use a finite number of discrete grids and time steps, respectively, both the validation and sensitivity studies will also evaluate how varying the spatial and temporal resolutions affects the numerical solution's accuracy. These are done to understand the code's behaviour in replicating the analytical solution, and therefore, to understand how to use it on a real CFD case.
+
+When using the analytical source as input, the code also computes a direct analytical calculation, the descriptions of which are provided in Sections \ref{sec:monopole_derivation} and \ref{sec:dipole_derivation}. These are calculated to give an analytical baseline against which the numerical FW-H results are compared. The following subchapters will discuss the validation of the FW-H code by comparing it against the known analytical solution.
+
+\clearpage
 
 \section{Validation of the FW-H Code} \label{sec:validation_description}
-To compare the accuracy of the derivations described in Chapter \ref{sec:derivations}, several test cases are used to model a point sound source and an observer. This section describes the test cases used and the validations. Figure \ref{fig:fwh_validation} below illustrates the framework used for validation. 
+To validate the numerical integration of the FW-H code, several test cases are developed where an analytical point source are used as an input. This section describes the validation methodology and the test cases. Figure \ref{fig:fwh_validation} below illustrates the validation framework.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{fig_monopole/fwh_domain_observer_arrows.png}
-    \caption{Code validation framework}
+    \includegraphics[width=1\linewidth]{fig_monopole/fwh_domain_observer_arrows.png}
+    \caption{Validation framework}
     \label{fig:fwh_validation}
 \end{figure}
 
-The numerical code samples the source to the permeable boundary (black arrow), followed by surface integration of pressure to calculate the acoustic pressure at the observer (blue arrow). Analytical pressure is calculated directly from the source to the observer (red arrow).
+The numerical code samples the pressure generated by the source on the permeable boundary (black arrow), followed by surface integration of pressure to calculate the acoustic pressure at the observer (blue arrow). The analytical solution is calculated directly from the source to the observer (red arrow).
+
+\clearpage
 
 \subsection{Test Cases} \label{subsubsec:test_cases}
-In all validation test cases, the point source is prescribed with strength $Q(\tau)=\sin{(10\tau)}$, from a starting point at the origin, $\left[0,0,0\right]$. Speed of sound $c$ and freestream density $\rho_0$ are set to $340m/s$ and $1.2 kg/m^3$, respectively. The observer's location depends on the case. A control surface surrounding the source are prescribed with a radius $r$. 
+% In all validation test cases, the point source is prescribed with strength $Q(\tau)=\sin{(10\tau)}$, from a starting point at the origin, $\left[0,0,0\right]$. Speed of sound $c$ and freestream density $\rho_0$ are set to $340m/s$ and $1.2 kg/m^3$, respectively. The observer's location depends on the case. A control surface surrounding the source are prescribed with a radius $r$. 
 
-These following are based on the work of Char \cite{TingChar2024} and are extended for dipoles:
+The following are the test cases used in the validation:
 
 \begin{itemize}
     \item Stationary and co-translating point source and observer. This test case is used as a baseline to test the overall prediction of the zero relative motion between point source and observer. The tests will also demonstrate the similarity between the two cases. 
@@ -145,7 +226,7 @@ These following are based on the work of Char \cite{TingChar2024} and are extend
         \label{fig:testcase_ss_tt}
     \end{figure}
     
-    \item Translating point source and stationary observer. This test case demonstrates the prediction with cases of non-zero relative motion between point source and observer, and thus shows the limitations of some of the derivations.
+    \item Translating point source and stationary offset observer. This test case demonstrates the prediction with cases of non-zero relative motion between point source and observer. The observer is placed offset from the source's axis of motion such that the source can approach and move away from the observer in a single test case. This test case is done only for the monopole.
     
     \begin{figure}[H]
         \centering
@@ -153,15 +234,27 @@ These following are based on the work of Char \cite{TingChar2024} and are extend
         \caption{Illustration of translating point source and stationary observer cases}
         \label{fig:testcase_ts}
     \end{figure}
+
+    \item Translating point source and stationary inline observer. This test case is done for the dipole test case to demonstrate the non-zero relative motion. The observer is placed inline instead of offset unlike the previous case to simplify the problem for the dipole's derivation in 1-D. The simulations are defined to finish before the control surface touches the observer to avoid singularity.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{fig_test_cases/translating_stationary_inline.png}
+        \caption{Illustration of translating point source and inline stationary observer case}
+        \label{fig:placeholder}
+    \end{figure}
     
 \end{itemize}
 
-Any error are then be quantified using the following,
+\subsection{Error Quantification}\label{subsec:error_quantification1}
+The errors of the numerical integration are quantified using the L2-norm error,
 
 \begin{equation}
-    Error = \frac{\Sigma_j(p_{j,ref} - p_{j,num})^2}{\Sigma_j(p^j_{ref})^2} 
+    Error = \frac{\Sigma_j(p_{j,ref} - p_{j,num})^2}{\Sigma_j(p_{j,ref})^2} 
     \label{eq:error}
 \end{equation}
+
+which uses the same approach as Casalino's paper on the Advanced Time approach \cite{casalino-2001}. This approach is used to compare the instantaneous values of the numerical FW-H integration against the analytical model at every point in time; therefore, any deviations from the analytical results are evaluated. If the number of data points (i.e., number of time-steps) between the analytical and numerical solutions differ, such as during tests of varying temporal resolutions, the coarser numerical results are linearly interpolated to make up for the missing time-steps.
 
 \clearpage
 % where the subscripts $j$, $ref$, and $num$ are the $j$-th index, reference analytical values, and the numerical integration results, respectively. 

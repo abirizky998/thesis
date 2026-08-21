@@ -1,15 +1,15 @@
 % !TEX root = ../main.tex
 
-\section{Analytical Solution for a Monopole} \label{sec:Analytical Solution for a Monopole}
+\section{Analytical Solution for a Monopole} \label{sec:monopole_derivation}
 
-Analytical approaches for monopole sources have been validated in previous work by Char and Thomas \cite{TingChar2024, Thomas2012}; however, expansion into dipoles requires further validation. Monopoles or thickness sources are sounds that are equivalent to mass supply, described as the following,
+Analytical approaches for monopole sources have been validated in previous work by Char and Thomas \cite{TingChar2024, Thomas2012}. This section describes the derivation of the analytical monopole to provide a background on the analytical solution provided in the validation cases. Monopoles or thickness sources are sounds that are equivalent to mass supply, described as the following,
 
 \begin{equation}
     \Box^2p'(\bm{x},t) = \frac{\partial}{\partial t} (Q(t) \delta(\bm{x} - y(t)))
     \label{eq:monopole_def}
 \end{equation}
 
-Convolving the above with the Green's function in 3D free-space, described as,
+Convolving the above with the Green's function in 3D free-space (see Appendix \ref{app:GF}, described as,
 
 \begin{equation}
     G=\frac{\delta(g(\tau))}{4\pi r}
@@ -27,7 +27,7 @@ which is the description of the monopole used in this work.
 
 
 \subsection{Monopole Pressure Equation} \label{subsec:mono_p}
-Taking the monopole definition as described in Equation \ref{eq:monopole_convolved}, taking the differentiation using the definitions as described in Appendix~\ref{app:derivatives}, and convolving  the analytical solution for pressure is obtained,% and using the quotient rule to differentiate each term, is obtained,
+Taking the monopole definition as described in Equation \ref{eq:monopole_convolved}, taking the differentiation using the definitions as described in Appendix~\ref{app:derivatives}, the analytical solution for pressure is obtained,% and using the quotient rule to differentiate each term, is obtained,
 
 % \begin{equation*}
 %     p'(\bm{x}, t) = \frac{1}{4\pi} \left[ 
@@ -46,11 +46,13 @@ Taking the monopole definition as described in Equation \ref{eq:monopole_convolv
 \begin{equation}
     p'(\bm{x}, t) = \frac{1}{4\pi} \left[ 
     \frac{\partial Q(\tau) / \partial \tau}{r(1-M_r)^2} +
-    \left(\frac{\partial M}{\partial \tau} \right) \frac{Q(\tau)}{r(1-M_r)^3} +
+    \left(\frac{\partial M}{\partial \tau} \right)_r \frac{Q(\tau)}{r(1-M_r)^3} +
     \frac{Q(\tau) c (M_r - |M|^2)}{r^2(1-M_r)^3}
     \right]_{\tau*}
     \label{eq:monopole_p_der}
 \end{equation}
+
+The first term on the right-hand side describes the far-field propagation of the monopole due to its strength's temporal gradient, $\partial Q/\partial\tau$, the second term describes the far-field propagation due to acceleration, $\partial M/\partial \tau$, and the third term describes the near-field propagation.
 
 \subsection{Monopole Velocity Equation} \label{subsec:monopole_u}
 
@@ -65,7 +67,7 @@ Using the momentum equation,
     \label{eq:momentum_eq}
 \end{equation}
 
-Assuming the flow has no mean flow and is inviscid, substituting the monopole definition into the pressure term, and convolving with Green's function to replace $\partial/\partial x_i$ with $\partial/\partial t$, %the solution for velocity is obtained, %the second terms of both left- and right-hand are zero. Defining the pressure gradient by defining the pressure as monopole pressure definition,
+Linearising the equation and assuming no mean flow, substituting the monopole definition into the pressure term, and convolving with Green's function to replace $\partial/\partial x_i$ terms with $\partial/\partial t$ (see Appendix \ref{app:ddx_replace}), the solution for velocity is obtained, %the second terms of both left- and right-hand are zero. Defining the pressure gradient by defining the pressure as monopole pressure definition,
 
 % \begin{equation*}
 %     - \frac{\partial p}{\partial x_i} =
@@ -134,10 +136,14 @@ Assuming the flow has no mean flow and is inviscid, substituting the monopole de
     \label{eq:monopole_velocity}
 \end{equation}
 
+where the first and third terms correspond to the far-field velocity perturbation components due to the strength and Mach number temporal gradients, respectively; and the second, fourth, and fifth terms correspond to the near-field perturbation components.
+
 \subsection{Monopole Density Equation} \label{subsec:mono_rho}
-The expression for density is the same for both monopole and dipole since the flow is assumed to be linear and isentropic. Ttherefore, the expression for density is,
+The expression for density is based on the assumption of a linear, isentropic flow. Therefore, the expression for density is,
 
 \begin{equation}
     \rho'=\frac{p'}{c^2}
     \label{eq:density}
 \end{equation}
+
+which is valid for both monopole and dipole sources. 

@@ -21,6 +21,12 @@
 \usepackage{array}   
 \usepackage{float}
 \usepackage[titletoc]{appendix}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[normalem]{ulem} % [normalem] prevents changing italics everywhere else
+% --- TIKZ FLOWCHART SETUP ---
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
 
 % --- CHAPTER FORMATTING ---
 \usepackage{titlesec}
@@ -119,6 +125,7 @@
 \addcontentsline{toc}{chapter}{Contents}
 \tableofcontents
 \listoffigures
+\listoftables
 \clearpage
 
 % --- NOMENCLATURE ---
@@ -138,8 +145,8 @@
 \input{sections/02g_concluding_summary}
 
 \input{sections/03a_numerical_fwh_sensitivity}
-\input{sections/03b_simple_source_sensitivity}
-\input{sections/03c_multipole_sensitivity}
+\input{sections/03b_multipole_sensitivity}
+\input{sections/03c_simple_source_sensitivity}
 \input{sections/03d_concluding_summary}
 
 \input{sections/04a_open_rotor}

@@ -1,3 +1,7 @@
 % !TEX root = ../main.tex
 
 \section{Concluding Summary}\label{sec:CS_ch2}
+
+In the grid resolution comparisons, while the finest resolution of $40\times40$ has very good agreement with the analytical solutions at less than $1\%$ error in all cases, the errors progressively increase to $\sim4\%$ and $\sim 30\%$, for coarser resolutions. The plots show at lower resolution, the numerical results could not capture the peaks and troughs of the harmonic wave, causing dissipation. Given the acoustic wavelength is $\sim214m$ (from the prescribed frequency and speed of sound values), the coarsest grid has an arc distance between two nodes of 1.25 meters. The errors shown in the grid sensitivities are mainly due to geometric error of the spherical domain, rather than the grids not being able to capture the wavelengths. This shows that this grid resolution is sufficient given the input and control surface radius.
+
+The time step sensitivity study exhibits similar trends. The $dt=0.005s$ and $dt=0.025s$ sizes yield errors at less than $1\%$ and $2\%$, respectively. However, largest time-step size of $dt=0.125s$ (an $8Hz$ sampling frequency), is insufficient to capture the input acoustic frequency of $10rad/s$ or $\sim1.6Hz$, as it can only sample at five times the input. This can be seen in the lags in the plots as the numerical solution attempted to keep up with the wave.

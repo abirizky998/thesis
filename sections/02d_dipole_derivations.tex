@@ -28,18 +28,16 @@ As $\delta$ tends to zero, this distance can be expressed as a first-order Taylo
     \right] 
 \end{equation*}
 
-Hence, the dipole source strength $f_i(t)$ can be defined as
+Hence, the dipole source strength $f_i(t)$ can be defined as,
 
 \begin{equation}
-    f_i(t)=4\pi r|1-M_r| \delta \frac{\partial}{\partial t} \left(\frac{Q(t)}{4\pi r |1-M_r} \right)
+    f_i(t)=4\pi r|1-M_r| \delta \frac{\partial}{\partial t} \left(\frac{Q(t)}{4\pi r |1-M_r|} \right)
     \label{eq:dipole_source}
 \end{equation}
 
-By defininig the force vector in this form and evaluating it via central finite differences, the numerical solver captures the convective derivative $\partial M_r / \partial t$ without requiring an analytical expansion.
+by defining the forcing term in this term and evaluating it using central differencing, the code captures the expansion of this forcing term without requiring an analytical expansion.
 
-To analytically derive the velocity for dipole, explicitly integrating the momentum equation is unviable, as it will return too many terms. Instead, limited solutions are obtained by applying some physical assumptions. The velocity derivations assume either a zero relative Mach number or a plane wave condition. Alternatively, another method that uses the superposition of two equal monopoles of opposite signs will also be presented.
-
-\subsection{Dipole Pressure Equation} \label{subsubsec:dipole_p}
+\subsection{Dipole Pressure Equation} \label{subsec:dipole_p}
 
 Using the definition described in Equation \ref{eq:dipole_convolved}, replacing the $\partial / \partial x_i$ term as outlined in Appendix~\ref{app:ddx_replace}, and using the steps from monopole pressure, the pressure for a dipole is obtained,
 
@@ -54,8 +52,12 @@ Using the definition described in Equation \ref{eq:dipole_convolved}, replacing 
 \end{split}
 \end{equation}
 
+where the first and fourth terms on the right-hand side are the far-field propagation due to changes in the source forcing term and Mach number, respectively; while the second, third, and fifth terms are the near-field propagation terms. The far-field terms are the primary reason for the noise propagation in rotors such as helicopter blades, propellers, and open rotor engines; as the blades rotate and push the air surrounding it, the local forcing strength and Mach number changes with time.
 
-\subsection{Dipole Velocity Equation: Zero Relative Mach Number Assumption} \label{subsubsec:dipole_u1}
+\subsection{Dipole Velocity Equation} \label{subsec:dipole_u}
+To analytically derive the velocity for a dipole, explicitly integrating the momentum equation like with the monopole is unviable, as it will return too many terms. Instead, limited solutions are obtained by applying some physical assumptions. The velocity derivations assume either a zero relative Mach number or a plane wave condition. An alternative method that uses the superposition of two equal monopoles of opposite signs will also be presented.
+
+\subsubsection{Dipole Velocity Equation: Zero Relative Mach Number Assumption} \label{subsubsec:dipole_u1}
 
 Assuming inviscid and no mean flow in the momentum equation, the pressure gradient is,
 
@@ -98,9 +100,11 @@ substituting the integrand to retarded time and assuming zero relative velocity,
     \label{eq:dipole_u1}
 \end{equation}
 
+where the first, second, and third terms on the right hand side are the near-, intermediate-, and far-field velocity propagation, respectively.
+
 % where the first, second, and third terms on the right-hands side correspond to near-field, intermediate-field, and far-field, respectively.
 
-\subsection{Dipole Velocity Equation: Plane Wave Assumption} \label{subsubsec:dipole_u2}
+\subsubsection{Dipole Velocity Equation: Plane Wave Assumption} \label{subsubsec:dipole_u2}
 
 The plane wave assumption allows relative Mach number between the source and observer, provided the control surface is within the far-field of the source. The far-field is defined as,
 
@@ -152,7 +156,7 @@ Physically, this means the acoustic wavelength is smaller than the control surfa
     \label{eq:dipole_u2}
 \end{equation}
 
-\subsection{Dual Monopole} \label{subsubsec:dual_mono}
+\subsubsection{Dual Monopole} \label{subsubsec:dual_mono}
 
 An alternative approach to validate dipole sources is the dual monopole method. Using the definition of a dipole, this method uses two equal monopoles of opposing signs, separated by a small distance $\delta$, which in this case is defined as,
 

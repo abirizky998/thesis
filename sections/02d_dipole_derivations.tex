@@ -35,11 +35,11 @@ Hence, the dipole source strength $f_i(t)$ can be defined as,
     \label{eq:dipole_source}
 \end{equation}
 
-by defining the forcing term in this term and evaluating it using central differencing, the code captures the expansion of this forcing term without requiring an analytical expansion.
+by defining the forcing term in this term and evaluating it using central differencing, the analytical code captures the expansion of this forcing term without requiring an analytical expansion.
 
 \subsection{Dipole Pressure Equation} \label{subsec:dipole_p}
 
-Using the definition described in Equation \ref{eq:dipole_convolved}, replacing the $\partial / \partial x_i$ term as outlined in Appendix~\ref{app:ddx_replace}, and using the steps from monopole pressure, the pressure for a dipole is obtained,
+Using the definition described in Equation \ref{eq:dipole_convolved}, replacing the $\partial / \partial x_i$ term as outlined in Appendix~\ref{app:ddx_replace}, and using the steps from monopole pressure, the pressure for an analytical dipole is obtained,
 
 \begin{equation}
 \begin{split}
@@ -55,7 +55,7 @@ Using the definition described in Equation \ref{eq:dipole_convolved}, replacing 
 where the first and fourth terms on the right-hand side are the far-field propagation due to changes in the source forcing term and Mach number, respectively; while the second, third, and fifth terms are the near-field propagation terms. The far-field terms are the primary reason for the noise propagation in rotors such as helicopter blades, propellers, and open rotor engines; as the blades rotate and push the air surrounding it, the local forcing strength and Mach number changes with time.
 
 \subsection{Dipole Velocity Equation} \label{subsec:dipole_u}
-To analytically derive the velocity for a dipole, explicitly integrating the momentum equation like with the monopole is unviable, as it will return too many terms. Instead, limited solutions are obtained by applying some physical assumptions. The velocity derivations assume either a zero relative Mach number or a plane wave condition. An alternative method that uses the superposition of two equal monopoles of opposite signs will also be presented.
+To analytically derive the velocity for a dipole, explicitly integrating the momentum equation like with the monopole is unviable, as this approach will return too many terms. Instead, limited solutions are obtained by applying some physical assumptions. The velocity derivations assume either a zero relative Mach number or a plane wave condition. An alternative method that uses the superposition of two equal monopoles of opposite signs will also be presented.
 
 \subsubsection{Dipole Velocity Equation: Zero Relative Mach Number Assumption} \label{subsubsec:dipole_u1}
 
@@ -74,7 +74,7 @@ Hence, the velocity is defined as,
     u_i' = \frac{1}{4\pi\rho_0} \frac{\partial^2}{\partial x_i \partial x_j} \int_{-\infty}^t \frac{f_i(\tau)}{r(1-M_r)}dt
 \end{equation*}
 
-substituting the integrand to retarded time and assuming zero relative velocity, thus $dr/dt=0$ and $M_r=0$, letting $F_i(\tau) = \int f_i(\tau) d\tau \implies f_i(\tau) = \dot{F}_i(\tau)$, the analytical solution for dipole velocity that is valid for cases with zero relative Mach number is obtained,%the equation simplifies to,
+substituting the integrand to use the time at the observer, $\tau$, and assuming zero relative velocity; therefore, $dr/dt=0$ and $M_r=0$. Then, let $F_i(\tau) = \int f_i(\tau) d\tau \implies f_i(\tau) = \dot{F}_i(\tau)$, the analytical solution for dipole velocity that is valid for cases with zero relative Mach number is obtained,%the equation simplifies to,
 
 % \begin{equation}
 %     u_i = \frac{1}{4\pi r\rho_0} \frac{\partial^2}{\partial x_i \partial x_j} \int_{-\infty}^t {f_i(\tau)}d\tau
@@ -106,7 +106,7 @@ where the first, second, and third terms on the right hand side are the near-, i
 
 \subsubsection{Dipole Velocity Equation: Plane Wave Assumption} \label{subsubsec:dipole_u2}
 
-The plane wave assumption allows relative Mach number between the source and observer, provided the control surface is within the far-field of the source. The far-field is defined as,
+The plane wave assumption allows relative Mach number between the source and observer, provided the control surface is within the far-field of the source. In the far-field, the pressure and velocity field perturbation components are in-phase, which is the reason of this requirement. The far-field is defined as,
 
 \begin{equation}
     k\hat{r} \gg 1
@@ -114,7 +114,7 @@ The plane wave assumption allows relative Mach number between the source and obs
 \end{equation}
 
 % where $\hat{r}$ is the control surface radius. 
-Physically, this means the acoustic wavelength is smaller than the control surface diameter, allowing the entire wavelength to be fully captured by the permeable sphere. Using the derivations in Appendix~\ref{app:planeWave}, the velocity term with the plane wave assumption is obtained,
+Physically, this means the acoustic wavelength must be smaller than the control surface diameter, allowing the entire wavelength to be fully captured by the permeable sphere. Using the derivations in Appendix~\ref{app:planeWave}, the velocity term with the plane wave assumption is obtained,
 
 % \begin{equation}
 %     p'(\bm{x},t)=\frac{g(t-r/c)}{r}
@@ -156,13 +156,17 @@ Physically, this means the acoustic wavelength is smaller than the control surfa
     \label{eq:dipole_u2}
 \end{equation}
 
+hence showing that the velocity perturbation component is indeed in-phase with the pressure.
+
 \subsubsection{Dual Monopole} \label{subsubsec:dual_mono}
 
-An alternative approach to validate dipole sources is the dual monopole method. Using the definition of a dipole, this method uses two equal monopoles of opposing signs, separated by a small distance $\delta$, which in this case is defined as,
+An alternative approach to validate dipole sources is the dual monopole method. This approach entirely avoids the assumptions that were made in the previous subsections and instead uses two monopoles in the domain. This bypasses the case limitations imposed by the assumptions; therefore, when using this method on cases that would violate assumptions made above, this approach will remain accurate. However, to ensure that the dual monopole approach itself is valid, it needs to be compared against some known analytical solution, however limited the predictions from these solutions are.
+
+Using the definition of a dipole, this method uses two equal monopoles of opposing signs, separated by a small distance $\delta$, which in this case is defined as,
 
 \begin{equation}
     k\delta \ll 1
     \label{eq:delta_distance_def}
 \end{equation}
 
-To simplify the implementation, the analytical code calculates $\delta=0.01/k$. Another advantage of this approach is that it allows the prediction of the directivity patterns of the dipole.
+To simplify the validation process, it is assumed in the test cases that the distance between the two monopoles is $\delta=0.01/k$, which should still validate this assumption. Another advantage of this approach is that it allows the prediction of the directivity patterns of the dipole, the results of which will also be presented in the next section.

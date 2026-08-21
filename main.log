@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.7.24)  4 AUG 2026 08:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.7.24)  21 AUG 2026 13:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -319,57 +319,314 @@ Package: appendix 2020/02/08 v1.2c extra appendix facilities
 \c@@pps=\count296
 \c@@ppsavesec=\count297
 \c@@ppsaveapp=\count298
+) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen172
+\lightrulewidth=\dimen173
+\cmidrulewidth=\dimen174
+\belowrulesep=\dimen175
+\belowbottomsep=\dimen176
+\aboverulesep=\dimen177
+\abovetopsep=\dimen178
+\cmidrulesep=\dimen179
+\cmidrulekern=\dimen180
+\defaultaddspace=\dimen181
+\@cmidla=\count299
+\@cmidlb=\count300
+\@aboverulesep=\dimen182
+\@belowrulesep=\dimen183
+\@thisruleclass=\count301
+\@lastruleclass=\count302
+\@thisrulewidth=\dimen184
+) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip59
+\multirow@cntb=\count303
+\multirow@dima=\skip60
+\bigstrutjot=\dimen185
+) (/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box61
+\UL@hyphenbox=\box62
+\UL@skip=\skip61
+\UL@hook=\toks27
+\UL@height=\dimen186
+\UL@pe=\count304
+\UL@pixel=\dimen187
+\ULC@box=\box63
+Package: ulem 2019/11/18
+\ULdepth=\dimen188
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks28
+\pgfutil@tempdima=\dimen189
+\pgfutil@tempdimb=\dimen190
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box64
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks29
+\pgfkeys@temptoks=\toks30
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks31
+))
+\pgf@x=\dimen191
+\pgf@y=\dimen192
+\pgf@xa=\dimen193
+\pgf@ya=\dimen194
+\pgf@xb=\dimen195
+\pgf@yb=\dimen196
+\pgf@xc=\dimen197
+\pgf@yc=\dimen198
+\pgf@xd=\dimen199
+\pgf@yd=\dimen256
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count305
+\c@pgf@countb=\count306
+\c@pgf@countc=\count307
+\c@pgf@countd=\count308
+\t@pgf@toka=\toks32
+\t@pgf@tokb=\toks33
+\t@pgf@tokc=\toks34
+\pgf@sys@id@count=\count309
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count310
+\pgfsyssoftpath@bigbuffer@items=\count311
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen257
+\pgfmath@count=\count312
+\pgfmath@box=\box65
+\pgfmath@toks=\toks35
+\pgfmath@stack@operand=\toks36
+\pgfmath@stack@operation=\toks37
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count313
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen258
+\pgf@picmaxx=\dimen259
+\pgf@picminy=\dimen260
+\pgf@picmaxy=\dimen261
+\pgf@pathminx=\dimen262
+\pgf@pathmaxx=\dimen263
+\pgf@pathminy=\dimen264
+\pgf@pathmaxy=\dimen265
+\pgf@xx=\dimen266
+\pgf@xy=\dimen267
+\pgf@yx=\dimen268
+\pgf@yy=\dimen269
+\pgf@zx=\dimen270
+\pgf@zy=\dimen271
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen272
+\pgf@path@lasty=\dimen273
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen274
+\pgf@shorten@start@additional=\dimen275
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box66
+\pgf@hbox=\box67
+\pgf@layerbox@main=\box68
+\pgf@picture@serial@count=\count314
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen276
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen277
+\pgf@pt@y=\dimen278
+\pgf@pt@temp=\dimen279
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen280
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen281
+\pgf@sys@shading@range@num=\count315
+\pgf@shadingcount=\count316
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box69
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box70
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen282
+\pgf@nodesepend=\dimen283
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen284
+\pgffor@skip=\dimen285
+\pgffor@stack=\toks38
+\pgffor@toks=\toks39
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count317
+\pgfplotmarksize=\dimen286
+)
+\tikz@lastx=\dimen287
+\tikz@lasty=\dimen288
+\tikz@lastxsaved=\dimen289
+\tikz@lastysaved=\dimen290
+\tikz@lastmovetox=\dimen291
+\tikz@lastmovetoy=\dimen292
+\tikzleveldistance=\dimen293
+\tikzsiblingdistance=\dimen294
+\tikz@figbox=\box71
+\tikz@figbox@bg=\box72
+\tikz@tempbox=\box73
+\tikz@tempbox@bg=\box74
+\tikztreelevel=\count318
+\tikznumberofchildren=\count319
+\tikznumberofcurrentchild=\count320
+\tikz@fig@count=\count321
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count322
+\pgfmatrixcurrentcolumn=\count323
+\pgf@matrix@numberofcolumns=\count324
+)
+\tikz@expandcount=\count325
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowinset=\dimen295
+\pgfarrowlength=\dimen296
+\pgfarrowwidth=\dimen297
+\pgfarrowlinewidth=\dimen298
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
-\ttl@box=\box61
-\beforetitleunit=\skip59
-\aftertitleunit=\skip60
-\ttl@plus=\dimen172
-\ttl@minus=\dimen173
-\ttl@toksa=\toks27
-\titlewidth=\dimen174
-\titlewidthlast=\dimen175
-\titlewidthfirst=\dimen176
+\ttl@box=\box75
+\beforetitleunit=\skip62
+\aftertitleunit=\skip63
+\ttl@plus=\dimen299
+\ttl@minus=\dimen300
+\ttl@toksa=\toks40
+\titlewidth=\dimen301
+\titlewidthlast=\dimen302
+\titlewidthfirst=\dimen303
 ) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and footers
-\f@nch@headwidth=\skip61
-\f@nch@O@elh=\skip62
-\f@nch@O@erh=\skip63
-\f@nch@O@olh=\skip64
-\f@nch@O@orh=\skip65
-\f@nch@O@elf=\skip66
-\f@nch@O@erf=\skip67
-\f@nch@O@olf=\skip68
-\f@nch@O@orf=\skip69
+\f@nch@headwidth=\skip64
+\f@nch@O@elh=\skip65
+\f@nch@O@erh=\skip66
+\f@nch@O@olh=\skip67
+\f@nch@O@orh=\skip68
+\f@nch@O@elf=\skip69
+\f@nch@O@erf=\skip70
+\f@nch@O@olf=\skip71
+\f@nch@O@orf=\skip72
 )
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 50.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 56.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count299
-\l__pdf_internal_box=\box62
-) (./main.aux (./sections/00a_acknowledgements.aux) (./sections/00b_nomenclature.aux))
+\l__color_backend_stack_int=\count326
+\l__pdf_internal_box=\box76
+) (./main.aux (./sections/00a_acknowledgements.aux) (./sections/00b_nomenclature.aux)
+
+LaTeX Warning: Label `fig:monopole_ss_RT_dt' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:monopole_ss_RT_dt' multiply defined.
+
+
+LaTeX Warning: Label `fig:monopole_ss_AT_dt' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:monopole_ss_AT_dt' multiply defined.
+
+
+LaTeX Warning: Label `fig:monopole_tt_dt' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:monopole_tt_dt' multiply defined.
+
+
+LaTeX Warning: Label `fig:monopole_ts_RT_dx' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:monopole_ts_RT_dx' multiply defined.
+
+
+LaTeX Warning: Label `fig:monopole_ts_AT_dx' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:monopole_ts_AT_dx' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -380,17 +637,17 @@ Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 Package caption Info: End \AtBeginDocument code.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count300
-\scratchdimen=\dimen177
-\scratchbox=\box63
-\nofMPsegments=\count301
-\nofMParguments=\count302
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count303
-\MPscratchDim=\dimen178
-\MPnumerator=\count304
-\makeMPintoPDFobject=\count305
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count327
+\scratchdimen=\dimen304
+\scratchbox=\box77
+\nofMPsegments=\count328
+\nofMParguments=\count329
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count330
+\MPscratchDim=\dimen305
+\MPnumerator=\count331
+\makeMPintoPDFobject=\count332
+\everyMPtoPDFconversion=\toks42
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -431,7 +688,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 50.
+Package hyperref Info: Link coloring OFF on input line 56.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -439,32 +696,32 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count306
+\c@section@level=\count333
 )
-LaTeX Info: Redefining \ref on input line 50.
-LaTeX Info: Redefining \pageref on input line 50.
-LaTeX Info: Redefining \nameref on input line 50.
+LaTeX Info: Redefining \ref on input line 56.
+LaTeX Info: Redefining \pageref on input line 56.
+LaTeX Info: Redefining \nameref on input line 56.
  (./main.out) (./main.out)
-\@outlinefile=\write3
-\openout3 = `main.out'.
+\@outlinefile=\write4
+\openout4 = `main.out'.
 
-<Imperial_College_London_new_logo.png, id=188, 12948.375pt x 1422.31375pt>
+<Imperial_College_London_new_logo.png, id=224, 12948.375pt x 1422.31375pt>
 File: Imperial_College_London_new_logo.png Graphic file (type png)
 <use Imperial_College_London_new_logo.png>
-Package pdftex.def Info: Imperial_College_London_new_logo.png  used on input line 57.
+Package pdftex.def Info: Imperial_College_London_new_logo.png  used on input line 63.
 (pdftex.def)             Requested size: 241.84843pt x 26.56413pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Imperial_College_London_new_logo.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 106--107
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 108.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 114.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 108.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 114.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -482,38 +739,44 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]
-Overfull \hbox (9.2231pt too wide) in paragraph at lines 29--29
+Overfull \hbox (9.2231pt too wide) in paragraph at lines 34--34
  [][] [][]\OT1/phv/m/n/12 Numerical Re-sult Com-par-isons for Dipole Deriva-tions and Dual Monopoles[] [][]  
  []
 
 )
-\tf@toc=\write4
-\openout4 = `main.toc'.
+\tf@toc=\write5
+\openout5 = `main.toc'.
 
  [4] (./main.lof
-Overfull \hbox (24.04233pt too wide) in paragraph at lines 12--12
+Overfull \hbox (24.04233pt too wide) in paragraph at lines 17--17
  [][] [][]\OT1/phv/m/n/12 Comparison of an-a-lyt-i-cal and nu-mer-i-cal dipole val-i-da-tions us-ing the dual monopole 
  []
 
 )
-\tf@lof=\write5
-\openout5 = `main.lof'.
+\tf@lof=\write6
+\openout6 = `main.lof'.
 
  [5
+
+] (./main.lot)
+\tf@lot=\write7
+\openout7 = `main.lot'.
+
+ [6
 
 ]
 \openout2 = `sections/00b_nomenclature.aux'.
 
  (./sections/00b_nomenclature.tex
-Overfull \hbox (2.04337pt too wide) in paragraph at lines 75--75
+Overfull \hbox (2.04337pt too wide) in paragraph at lines 77--77
 []|\OT1/phv/b/n/12 Superscripts| 
  []
 
-[6
+[7
 
 
 
-]) [7] (./sections/01_introduction.tex
+]) [8] (./sections/01_introduction.tex
 Chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
@@ -525,22 +788,24 @@ l.14
 
 
 ] [2]
-<fig_misc/CFD+ACOUSTICS.png, id=358, 866.48718pt x 555.57562pt>
+<fig_misc/CFD+ACOUSTICS.png, id=421, 866.48718pt x 555.57562pt>
 File: fig_misc/CFD+ACOUSTICS.png Graphic file (type png)
 <use fig_misc/CFD+ACOUSTICS.png>
-Package pdftex.def Info: fig_misc/CFD+ACOUSTICS.png  used on input line 47.
-(pdftex.def)             Requested size: 483.69687pt x 310.13684pt.
+Package pdftex.def Info: fig_misc/CFD+ACOUSTICS.png  used on input line 56.
+(pdftex.def)             Requested size: 386.95897pt x 248.10777pt.
  [3 <./fig_misc/CFD+ACOUSTICS.png>]
-<fig_past_reports/fwh_domain_observer.png, id=380, 420.6114pt x 363.5181pt>
+<fig_past_reports/fwh_domain_observer.png, id=445, 420.6114pt x 363.5181pt>
 File: fig_past_reports/fwh_domain_observer.png Graphic file (type png)
 <use fig_past_reports/fwh_domain_observer.png>
-Package pdftex.def Info: fig_past_reports/fwh_domain_observer.png  used on input line 56.
-(pdftex.def)             Requested size: 338.58632pt x 292.63423pt.
- [4 <./fig_past_reports/fwh_domain_observer.png>]) (./sections/02a_background_validation.tex [5]
+Package pdftex.def Info: fig_past_reports/fwh_domain_observer.png  used on input line 65.
+(pdftex.def)             Requested size: 483.69687pt x 418.05367pt.
+ [4 <./fig_past_reports/fwh_domain_observer.png>]) (./sections/02a_background_validation.tex [5
+
+]
 Chapter 2.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 10.
-<fig_misc/heaviside.png, id=401, 965.6075pt x 519.44063pt>
+<fig_misc/heaviside.png, id=469, 965.6075pt x 519.44063pt>
 File: fig_misc/heaviside.png Graphic file (type png)
 <use fig_misc/heaviside.png>
 Package pdftex.def Info: fig_misc/heaviside.png  used on input line 22.
@@ -548,175 +813,202 @@ Package pdftex.def Info: fig_misc/heaviside.png  used on input line 22.
 [6
 
 ] [7 <./fig_misc/heaviside.png>]
-<fig_misc/FWH_Flowchart.png, id=426, 5081.98625pt x 8221.71625pt>
-File: fig_misc/FWH_Flowchart.png Graphic file (type png)
-<use fig_misc/FWH_Flowchart.png>
-Package pdftex.def Info: fig_misc/FWH_Flowchart.png  used on input line 106.
-(pdftex.def)             Requested size: 338.58632pt x 547.72836pt.
- [8]
+Overfull \hbox (5.34904pt too wide) in paragraph at lines 170--170
+ []\OT1/phv/m/n/10.95 (Point/Scatter/Sphere) 
+ []
 
-LaTeX Warning: Reference `sec:derivations' on page 9 undefined on input line 113.
-
-[9 <./fig_misc/FWH_Flowchart.png>]
-<fig_monopole/fwh_domain_observer_arrows.png, id=447, 514.17094pt x 444.91219pt>
+[8] [9] [10]
+<fig_monopole/fwh_domain_observer_arrows.png, id=531, 514.17094pt x 444.91219pt>
 File: fig_monopole/fwh_domain_observer_arrows.png Graphic file (type png)
 <use fig_monopole/fwh_domain_observer_arrows.png>
-Package pdftex.def Info: fig_monopole/fwh_domain_observer_arrows.png  used on input line 117.
-(pdftex.def)             Requested size: 241.84843pt x 209.27168pt.
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 130.
+Package pdftex.def Info: fig_monopole/fwh_domain_observer_arrows.png  used on input line 196.
+(pdftex.def)             Requested size: 483.69687pt x 418.55016pt.
+ [11
+
+ <./fig_monopole/fwh_domain_observer_arrows.png>]
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 211.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
-<fig_test_cases/stationary_stationary.png, id=449, 409.53pt x 302.5704pt>
+<fig_test_cases/stationary_stationary.png, id=537, 409.53pt x 302.5704pt>
 File: fig_test_cases/stationary_stationary.png Graphic file (type png)
 <use fig_test_cases/stationary_stationary.png>
-Package pdftex.def Info: fig_test_cases/stationary_stationary.png  used on input line 134.
+Package pdftex.def Info: fig_test_cases/stationary_stationary.png  used on input line 215.
 (pdftex.def)             Requested size: 239.42758pt x 176.89908pt.
-<fig_test_cases/translating_translating.png, id=450, 410.0118pt x 304.4976pt>
+<fig_test_cases/translating_translating.png, id=538, 410.0118pt x 304.4976pt>
 File: fig_test_cases/translating_translating.png Graphic file (type png)
 <use fig_test_cases/translating_translating.png>
-Package pdftex.def Info: fig_test_cases/translating_translating.png  used on input line 140.
+Package pdftex.def Info: fig_test_cases/translating_translating.png  used on input line 221.
 (pdftex.def)             Requested size: 239.42758pt x 177.81676pt.
- [10 <./fig_monopole/fwh_domain_observer_arrows.png>]
-<fig_test_cases/translating_stationary.png, id=457, 732.8178pt x 306.4248pt>
+<fig_test_cases/translating_stationary.png, id=539, 732.8178pt x 306.4248pt>
 File: fig_test_cases/translating_stationary.png Graphic file (type png)
 <use fig_test_cases/translating_stationary.png>
-Package pdftex.def Info: fig_test_cases/translating_stationary.png  used on input line 152.
+Package pdftex.def Info: fig_test_cases/translating_stationary.png  used on input line 233.
 (pdftex.def)             Requested size: 483.69687pt x 202.255pt.
- [11 <./fig_test_cases/stationary_stationary.png> <./fig_test_cases/translating_translating.png> <./fig_test_cases/translating_stationary.png>]) (./sections/02b_monopole_derivations.tex [12
+ [12
 
-]) (./sections/02c_monopole_validations.tex
-<fig_monopole/monopole_stationary_dx.png, id=481, 408.3255pt x 284.0211pt>
-File: fig_monopole/monopole_stationary_dx.png Graphic file (type png)
-<use fig_monopole/monopole_stationary_dx.png>
-Package pdftex.def Info: fig_monopole/monopole_stationary_dx.png  used on input line 11.
-(pdftex.def)             Requested size: 239.42758pt x 166.54387pt.
-<fig_monopole/monopole_stationary_dt.png, id=482, 408.3255pt x 284.0211pt>
-File: fig_monopole/monopole_stationary_dt.png Graphic file (type png)
-<use fig_monopole/monopole_stationary_dt.png>
-Package pdftex.def Info: fig_monopole/monopole_stationary_dt.png  used on input line 17.
-(pdftex.def)             Requested size: 239.42758pt x 166.54387pt.
-<fig_monopole/monopole_moving_so_dx.png, id=483, 412.6617pt x 284.0211pt>
-File: fig_monopole/monopole_moving_so_dx.png Graphic file (type png)
-<use fig_monopole/monopole_moving_so_dx.png>
-Package pdftex.def Info: fig_monopole/monopole_moving_so_dx.png  used on input line 25.
-(pdftex.def)             Requested size: 239.42758pt x 164.78868pt.
-<fig_monopole/monopole_moving_so_dt.png, id=484, 414.8298pt x 284.0211pt>
-File: fig_monopole/monopole_moving_so_dt.png Graphic file (type png)
-<use fig_monopole/monopole_moving_so_dt.png>
-Package pdftex.def Info: fig_monopole/monopole_moving_so_dt.png  used on input line 31.
-(pdftex.def)             Requested size: 239.42758pt x 163.92625pt.
- [13]
-<fig_monopole/monopole_moving_s_dx.png, id=491, 401.8212pt x 284.0211pt>
-File: fig_monopole/monopole_moving_s_dx.png Graphic file (type png)
-<use fig_monopole/monopole_moving_s_dx.png>
-Package pdftex.def Info: fig_monopole/monopole_moving_s_dx.png  used on input line 44.
-(pdftex.def)             Requested size: 239.42758pt x 169.23517pt.
-<fig_monopole/monopole_moving_s_dt.png, id=492, 401.8212pt x 284.0211pt>
-File: fig_monopole/monopole_moving_s_dt.png Graphic file (type png)
-<use fig_monopole/monopole_moving_s_dt.png>
-Package pdftex.def Info: fig_monopole/monopole_moving_s_dt.png  used on input line 50.
-(pdftex.def)             Requested size: 239.42758pt x 169.23517pt.
- [14 <./fig_monopole/monopole_stationary_dx.png> <./fig_monopole/monopole_stationary_dt.png> <./fig_monopole/monopole_moving_so_dx.png> <./fig_monopole/monopole_moving_so_dt.png>]) (./sections/02d_dipole_derivations.tex [15 <./fig_monopole/monopole_moving_s_dx.png> <./fig_monopole/monopole_moving_s_dt.png>] [16] [17]) (./sections/02e_dipole_validations.tex
-<fig_dipole/dipole_near_valid.png, id=527, 399.6531pt x 299.1978pt>
+ <./fig_test_cases/stationary_stationary.png> <./fig_test_cases/translating_translating.png> <./fig_test_cases/translating_stationary.png>]
+<fig_test_cases/translating_stationary_inline.png, id=547, 389.7762pt x 302.5704pt>
+File: fig_test_cases/translating_stationary_inline.png Graphic file (type png)
+<use fig_test_cases/translating_stationary_inline.png>
+Package pdftex.def Info: fig_test_cases/translating_stationary_inline.png  used on input line 242.
+(pdftex.def)             Requested size: 241.84843pt x 187.73944pt.
+ [13 <./fig_test_cases/translating_stationary_inline.png>]) (./sections/02b_monopole_derivations.tex [14
+
+]) (./sections/02c_monopole_validations.tex [15]
+<fig_monopole/mono_stat_RT_dt.png, id=578, 455.301pt x 339.669pt>
+File: fig_monopole/mono_stat_RT_dt.png Graphic file (type png)
+<use fig_monopole/mono_stat_RT_dt.png>
+Package pdftex.def Info: fig_monopole/mono_stat_RT_dt.png  used on input line 33.
+(pdftex.def)             Requested size: 239.42758pt x 178.61914pt.
+<fig_monopole/mono_stat_RT_dx.png, id=579, 455.301pt x 339.669pt>
+File: fig_monopole/mono_stat_RT_dx.png Graphic file (type png)
+<use fig_monopole/mono_stat_RT_dx.png>
+Package pdftex.def Info: fig_monopole/mono_stat_RT_dx.png  used on input line 39.
+(pdftex.def)             Requested size: 239.42758pt x 178.61914pt.
+<fig_monopole/mono_stat_AT_dt.png, id=580, 455.301pt x 339.669pt>
+File: fig_monopole/mono_stat_AT_dt.png Graphic file (type png)
+<use fig_monopole/mono_stat_AT_dt.png>
+Package pdftex.def Info: fig_monopole/mono_stat_AT_dt.png  used on input line 54.
+(pdftex.def)             Requested size: 239.42758pt x 178.61914pt.
+<fig_monopole/mono_stat_AT_dx.png, id=581, 455.301pt x 339.669pt>
+File: fig_monopole/mono_stat_AT_dx.png Graphic file (type png)
+<use fig_monopole/mono_stat_AT_dx.png>
+Package pdftex.def Info: fig_monopole/mono_stat_AT_dx.png  used on input line 60.
+(pdftex.def)             Requested size: 239.42758pt x 178.61914pt.
+ [16 <./fig_monopole/mono_stat_RT_dt.png> <./fig_monopole/mono_stat_RT_dx.png>]
+<fig_monopole/mono_cotrans_dt.png, id=590, 455.301pt x 339.669pt>
+File: fig_monopole/mono_cotrans_dt.png Graphic file (type png)
+<use fig_monopole/mono_cotrans_dt.png>
+Package pdftex.def Info: fig_monopole/mono_cotrans_dt.png  used on input line 77.
+(pdftex.def)             Requested size: 239.42758pt x 178.61914pt.
+<fig_monopole/mono_cotrans_dx.png, id=591, 455.301pt x 339.669pt>
+File: fig_monopole/mono_cotrans_dx.png Graphic file (type png)
+<use fig_monopole/mono_cotrans_dx.png>
+Package pdftex.def Info: fig_monopole/mono_cotrans_dx.png  used on input line 83.
+(pdftex.def)             Requested size: 239.42758pt x 178.61914pt.
+ [17 <./fig_monopole/mono_stat_AT_dt.png> <./fig_monopole/mono_stat_AT_dx.png> <./fig_monopole/mono_cotrans_dt.png> <./fig_monopole/mono_cotrans_dx.png>]
+<fig_monopole/mono_trans_RT_dt.png, id=602, 455.301pt x 339.669pt>
+File: fig_monopole/mono_trans_RT_dt.png Graphic file (type png)
+<use fig_monopole/mono_trans_RT_dt.png>
+Package pdftex.def Info: fig_monopole/mono_trans_RT_dt.png  used on input line 101.
+(pdftex.def)             Requested size: 239.42758pt x 178.61914pt.
+<fig_monopole/mono_trans_RT_dx.png, id=603, 455.301pt x 339.669pt>
+File: fig_monopole/mono_trans_RT_dx.png Graphic file (type png)
+<use fig_monopole/mono_trans_RT_dx.png>
+Package pdftex.def Info: fig_monopole/mono_trans_RT_dx.png  used on input line 107.
+(pdftex.def)             Requested size: 239.42758pt x 178.61914pt.
+ [18 <./fig_monopole/mono_trans_RT_dt.png> <./fig_monopole/mono_trans_RT_dx.png>]
+<fig_monopole/mono_trans_AT_dt.png, id=613, 455.301pt x 339.669pt>
+File: fig_monopole/mono_trans_AT_dt.png Graphic file (type png)
+<use fig_monopole/mono_trans_AT_dt.png>
+Package pdftex.def Info: fig_monopole/mono_trans_AT_dt.png  used on input line 121.
+(pdftex.def)             Requested size: 239.42758pt x 178.61914pt.
+<fig_monopole/mono_trans_AT_dx.png, id=614, 455.301pt x 339.669pt>
+File: fig_monopole/mono_trans_AT_dx.png Graphic file (type png)
+<use fig_monopole/mono_trans_AT_dx.png>
+Package pdftex.def Info: fig_monopole/mono_trans_AT_dx.png  used on input line 127.
+(pdftex.def)             Requested size: 239.42758pt x 178.61914pt.
+) (./sections/02d_dipole_derivations.tex [19 <./fig_monopole/mono_trans_AT_dt.png> <./fig_monopole/mono_trans_AT_dx.png>] [20] [21]) (./sections/02e_dipole_validations.tex [22]
+<fig_dipole/dipole_near_valid.png, id=647, 399.6531pt x 299.1978pt>
 File: fig_dipole/dipole_near_valid.png Graphic file (type png)
 <use fig_dipole/dipole_near_valid.png>
-Package pdftex.def Info: fig_dipole/dipole_near_valid.png  used on input line 14.
+Package pdftex.def Info: fig_dipole/dipole_near_valid.png  used on input line 42.
 (pdftex.def)             Requested size: 232.17242pt x 173.81789pt.
-<fig_dipole/dipole_near_invalid.png, id=528, 396.7623pt x 299.1978pt>
+<fig_dipole/dipole_near_invalid.png, id=648, 396.7623pt x 299.1978pt>
 File: fig_dipole/dipole_near_invalid.png Graphic file (type png)
 <use fig_dipole/dipole_near_invalid.png>
-Package pdftex.def Info: fig_dipole/dipole_near_invalid.png  used on input line 20.
+Package pdftex.def Info: fig_dipole/dipole_near_invalid.png  used on input line 48.
 (pdftex.def)             Requested size: 232.17242pt x 175.08249pt.
-<fig_dipole/dipole_far_valid.png, id=529, 401.8212pt x 299.1978pt>
+<fig_dipole/dipole_far_valid.png, id=649, 401.8212pt x 299.1978pt>
 File: fig_dipole/dipole_far_valid.png Graphic file (type png)
 <use fig_dipole/dipole_far_valid.png>
-Package pdftex.def Info: fig_dipole/dipole_far_valid.png  used on input line 28.
+Package pdftex.def Info: fig_dipole/dipole_far_valid.png  used on input line 56.
 (pdftex.def)             Requested size: 232.17242pt x 172.87741pt.
-<fig_dipole/dipole_far_invalid.png, id=530, 399.6531pt x 299.1978pt>
+<fig_dipole/dipole_far_invalid.png, id=650, 399.6531pt x 299.1978pt>
 File: fig_dipole/dipole_far_invalid.png Graphic file (type png)
 <use fig_dipole/dipole_far_invalid.png>
-Package pdftex.def Info: fig_dipole/dipole_far_invalid.png  used on input line 34.
+Package pdftex.def Info: fig_dipole/dipole_far_invalid.png  used on input line 62.
 (pdftex.def)             Requested size: 232.17242pt x 173.81789pt.
- [18]
-<fig_dipole/dual_near_valid.png, id=540, 399.6531pt x 284.0211pt>
+ [23]
+<fig_dipole/dual_near_valid.png, id=658, 399.6531pt x 284.0211pt>
 File: fig_dipole/dual_near_valid.png Graphic file (type png)
 <use fig_dipole/dual_near_valid.png>
-Package pdftex.def Info: fig_dipole/dual_near_valid.png  used on input line 54.
+Package pdftex.def Info: fig_dipole/dual_near_valid.png  used on input line 82.
 (pdftex.def)             Requested size: 232.17242pt x 165.00104pt.
-<fig_dipole/dual_near_invalid.png, id=541, 396.7623pt x 284.0211pt>
+<fig_dipole/dual_near_invalid.png, id=659, 396.7623pt x 284.0211pt>
 File: fig_dipole/dual_near_invalid.png Graphic file (type png)
 <use fig_dipole/dual_near_invalid.png>
-Package pdftex.def Info: fig_dipole/dual_near_invalid.png  used on input line 60.
+Package pdftex.def Info: fig_dipole/dual_near_invalid.png  used on input line 88.
 (pdftex.def)             Requested size: 232.17242pt x 166.2015pt.
-<fig_dipole/dual_far_valid.png, id=542, 390.9807pt x 284.0211pt>
+<fig_dipole/dual_far_valid.png, id=660, 390.9807pt x 284.0211pt>
 File: fig_dipole/dual_far_valid.png Graphic file (type png)
 <use fig_dipole/dual_far_valid.png>
-Package pdftex.def Info: fig_dipole/dual_far_valid.png  used on input line 68.
+Package pdftex.def Info: fig_dipole/dual_far_valid.png  used on input line 96.
 (pdftex.def)             Requested size: 232.17242pt x 168.65877pt.
-<fig_dipole/dual_far_invalid.png, id=543, 390.258pt x 284.0211pt>
+<fig_dipole/dual_far_invalid.png, id=661, 390.258pt x 284.0211pt>
 File: fig_dipole/dual_far_invalid.png Graphic file (type png)
 <use fig_dipole/dual_far_invalid.png>
-Package pdftex.def Info: fig_dipole/dual_far_invalid.png  used on input line 74.
+Package pdftex.def Info: fig_dipole/dual_far_invalid.png  used on input line 102.
 (pdftex.def)             Requested size: 232.17242pt x 168.97081pt.
- [19 <./fig_dipole/dipole_near_valid.png> <./fig_dipole/dipole_near_invalid.png> <./fig_dipole/dipole_far_valid.png> <./fig_dipole/dipole_far_invalid.png>]
-<fig_dipole/dual_dipole_near_valid.png, id=553, 399.6531pt x 299.1978pt>
+ [24 <./fig_dipole/dipole_near_valid.png> <./fig_dipole/dipole_near_invalid.png> <./fig_dipole/dipole_far_valid.png> <./fig_dipole/dipole_far_invalid.png>]
+<fig_dipole/dual_dipole_near_valid.png, id=671, 399.6531pt x 299.1978pt>
 File: fig_dipole/dual_dipole_near_valid.png Graphic file (type png)
 <use fig_dipole/dual_dipole_near_valid.png>
-Package pdftex.def Info: fig_dipole/dual_dipole_near_valid.png  used on input line 91.
+Package pdftex.def Info: fig_dipole/dual_dipole_near_valid.png  used on input line 119.
 (pdftex.def)             Requested size: 232.17242pt x 173.81789pt.
-<fig_dipole/dual_dipole_near_invalid.png, id=554, 396.7623pt x 299.1978pt>
+<fig_dipole/dual_dipole_near_invalid.png, id=672, 396.7623pt x 299.1978pt>
 File: fig_dipole/dual_dipole_near_invalid.png Graphic file (type png)
 <use fig_dipole/dual_dipole_near_invalid.png>
-Package pdftex.def Info: fig_dipole/dual_dipole_near_invalid.png  used on input line 97.
+Package pdftex.def Info: fig_dipole/dual_dipole_near_invalid.png  used on input line 125.
 (pdftex.def)             Requested size: 232.17242pt x 175.08249pt.
-<fig_dipole/dual_dipole_far_valid.png, id=555, 392.4261pt x 299.1978pt>
+<fig_dipole/dual_dipole_far_valid.png, id=673, 392.4261pt x 299.1978pt>
 File: fig_dipole/dual_dipole_far_valid.png Graphic file (type png)
 <use fig_dipole/dual_dipole_far_valid.png>
-Package pdftex.def Info: fig_dipole/dual_dipole_far_valid.png  used on input line 105.
+Package pdftex.def Info: fig_dipole/dual_dipole_far_valid.png  used on input line 133.
 (pdftex.def)             Requested size: 232.17242pt x 177.01366pt.
-<fig_dipole/dual_dipole_far_invalid.png, id=556, 390.258pt x 299.1978pt>
+<fig_dipole/dual_dipole_far_invalid.png, id=674, 390.258pt x 299.1978pt>
 File: fig_dipole/dual_dipole_far_invalid.png Graphic file (type png)
 <use fig_dipole/dual_dipole_far_invalid.png>
-Package pdftex.def Info: fig_dipole/dual_dipole_far_invalid.png  used on input line 111.
+Package pdftex.def Info: fig_dipole/dual_dipole_far_invalid.png  used on input line 139.
 (pdftex.def)             Requested size: 232.17242pt x 177.99977pt.
- [20 <./fig_dipole/dual_near_valid.png> <./fig_dipole/dual_near_invalid.png> <./fig_dipole/dual_far_valid.png> <./fig_dipole/dual_far_invalid.png>]) (./sections/02f_directivity.tex [21 <./fig_dipole/dual_dipole_near_valid.png> <./fig_dipole/dual_dipole_near_invalid.png> <./fig_dipole/dual_dipole_far_valid.png> <./fig_dipole/dual_dipole_far_invalid.png>]
-<fig_dipole/directivity_case.png, id=575, 555.9972pt x 450.483pt>
+ [25 <./fig_dipole/dual_near_valid.png> <./fig_dipole/dual_near_invalid.png> <./fig_dipole/dual_far_valid.png> <./fig_dipole/dual_far_invalid.png>]) (./sections/02f_directivity.tex [26 <./fig_dipole/dual_dipole_near_valid.png> <./fig_dipole/dual_dipole_near_invalid.png> <./fig_dipole/dual_dipole_far_valid.png> <./fig_dipole/dual_dipole_far_invalid.png>]
+<fig_dipole/directivity_case.png, id=693, 555.9972pt x 450.483pt>
 File: fig_dipole/directivity_case.png Graphic file (type png)
 <use fig_dipole/directivity_case.png>
 Package pdftex.def Info: fig_dipole/directivity_case.png  used on input line 9.
 (pdftex.def)             Requested size: 386.95897pt x 313.535pt.
-<fig_dipole/directivity_stationary_3D.png, id=576, 3264.195pt x 2400.97pt>
+<fig_dipole/directivity_stationary_3D.png, id=694, 3264.195pt x 2400.97pt>
 File: fig_dipole/directivity_stationary_3D.png Graphic file (type png)
 <use fig_dipole/directivity_stationary_3D.png>
 Package pdftex.def Info: fig_dipole/directivity_stationary_3D.png  used on input line 20.
 (pdftex.def)             Requested size: 217.66211pt x 160.09846pt.
-<fig_dipole/directivity_translating_3D.png, id=577, 3338.4725pt x 2338.7375pt>
+<fig_dipole/directivity_translating_3D.png, id=695, 3338.4725pt x 2338.7375pt>
 File: fig_dipole/directivity_translating_3D.png Graphic file (type png)
 <use fig_dipole/directivity_translating_3D.png>
 Package pdftex.def Info: fig_dipole/directivity_translating_3D.png  used on input line 26.
 (pdftex.def)             Requested size: 217.66211pt x 152.4515pt.
-<fig_dipole/directivity_stationary_new.png, id=578, 651.8754pt x 378.6948pt>
+<fig_dipole/directivity_stationary_new.png, id=696, 651.8754pt x 378.6948pt>
 File: fig_dipole/directivity_stationary_new.png Graphic file (type png)
 <use fig_dipole/directivity_stationary_new.png>
 Package pdftex.def Info: fig_dipole/directivity_stationary_new.png  used on input line 34.
 (pdftex.def)             Requested size: 386.95897pt x 224.80325pt.
-<fig_dipole/directivity_translating_new.png, id=579, 651.8754pt x 378.6948pt>
+<fig_dipole/directivity_translating_new.png, id=697, 651.8754pt x 378.6948pt>
 File: fig_dipole/directivity_translating_new.png Graphic file (type png)
 <use fig_dipole/directivity_translating_new.png>
 Package pdftex.def Info: fig_dipole/directivity_translating_new.png  used on input line 40.
 (pdftex.def)             Requested size: 386.95897pt x 224.80325pt.
-) (./sections/02g_concluding_summary.tex [22 <./fig_dipole/directivity_case.png>]) (./sections/03a_numerical_fwh_sensitivity.tex [23 <./fig_dipole/directivity_stationary_3D.png> <./fig_dipole/directivity_translating_3D.png> <./fig_dipole/directivity_stationary_new.png> <./fig_dipole/directivity_translating_new.png>] [24]
+) (./sections/02g_concluding_summary.tex [27 <./fig_dipole/directivity_case.png>] [28 <./fig_dipole/directivity_stationary_3D.png> <./fig_dipole/directivity_translating_3D.png> <./fig_dipole/directivity_stationary_new.png> <./fig_dipole/directivity_translating_new.png>]) (./sections/03a_numerical_fwh_sensitivity.tex [29]
 Chapter 3.
-) (./sections/03b_simple_source_sensitivity.tex) (./sections/03c_multipole_sensitivity.tex) (./sections/03d_concluding_summary.tex) (./sections/04a_open_rotor.tex [25
+[30
 
-]
+]) (./sections/03b_multipole_sensitivity.tex [31]) (./sections/03c_simple_source_sensitivity.tex) (./sections/03d_concluding_summary.tex) (./sections/04a_open_rotor.tex [32]
 Chapter 4.
-) (./sections/09_conclusions.tex [26
+) (./sections/09_conclusions.tex [33
 
 ]
 Chapter 5.
-) (./sections/10_future_work.tex [27
+) (./sections/10_future_work.tex [34
 
 ]
 Chapter 6.
@@ -725,68 +1017,68 @@ Overfull \hbox (10.93958pt too wide) in paragraph at lines 4--5
 \OT1/phv/m/n/12 With the FW-H solver val-i-dated with some lim-i-ta-tions, the project moves to the hy-brid analytical-
  []
 
-) [28
+) [35
 
-] (./sections/99_genAI.tex) [29
-
-
-] [30] (./main.bbl [31
+] (./sections/99_genAI.tex) [36
 
 
-]) [32] (./sections/11_appendices.tex
+] [37] (./main.bbl [38
+
+
+] [39]) [40] (./sections/11_appendices.tex
 Appendix A.
-<fig_past_reports/gantt_chart.png, id=634, 963.6pt x 542.025pt>
+<fig_past_reports/gantt_chart.png, id=781, 963.6pt x 542.025pt>
 File: fig_past_reports/gantt_chart.png Graphic file (type png)
 <use fig_past_reports/gantt_chart.png>
 Package pdftex.def Info: fig_past_reports/gantt_chart.png  used on input line 9.
 (pdftex.def)             Requested size: 483.69687pt x 272.07874pt.
-[33
+[41
 
 
  <./fig_past_reports/gantt_chart.png>]
 Appendix B.
-[34
+[42
 
 ]
 Appendix C.
-[35
+[43
 
-] [36]
+] [44]
 Appendix D.
-[37
+[45
 
 ]
 Appendix E.
-[38
+[46
 
-] [39]
+] [47]
 Appendix F.
-[40
+[48
 
 ]
 Appendix G.
-) [41
+) [49
 
-] [42] (./main.aux (./sections/00a_acknowledgements.aux) (./sections/00b_nomenclature.aux))
+] [50] (./main.aux (./sections/00a_acknowledgements.aux) (./sections/00b_nomenclature.aux))
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 85041CB4C5766D0CA7BB93E5549865E3;9791.
+(rerunfilecheck)             Checksum: 01C24576E373CA7F19A2B13542197046;12042.
  ) 
 Here is how much of TeX's memory you used:
- 13923 strings out of 478287
- 226998 string characters out of 5849289
- 528306 words of memory out of 5000000
- 31626 multiletter control sequences out of 15000+600000
- 501521 words of font info for 105 fonts, out of 8000000 for 9000
+ 25304 strings out of 478287
+ 478867 string characters out of 5849289
+ 759528 words of memory out of 5000000
+ 42726 multiletter control sequences out of 15000+600000
+ 507489 words of font info for 119 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,23n,77p,1233b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (50 pages, 4958510 bytes).
+ 84i,23n,80p,1233b,830s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on main.pdf (59 pages, 4685748 bytes).
 PDF statistics:
- 808 PDF objects out of 1000 (max. 8388607)
- 653 compressed objects within 7 object streams
- 184 named destinations out of 1000 (max. 500000)
- 534 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 967 PDF objects out of 1000 (max. 8388607)
+ 792 compressed objects within 8 object streams
+ 220 named destinations out of 1000 (max. 500000)
+ 630 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2,7 +2,35 @@
 
 \section{Validation of the FW-H Method for Dipole Sources} \label{sec:dipole_validation}
 
-With the FW-H numerical solver validated for monopoles, the validation is extended to dipole sources. As mentioned in Subchapter \ref{sec:dipole_derivation}, explicitly deriving the velocity terms for dipole sources is unviable. This led to two derivation cases with physical assumptions and one using the two monopoles method. Therefore, the validation is separated into two parts; one with the dipole derivations, and another with the dual monopole under the same conditions. Then, the numerical results are compared to understand the limitations of each approach.
+With the FW-H numerical solver validated for monopoles, the validation is extended to dipole sources. As mentioned in Subchapter \ref{sec:dipole_derivation}, explicitly deriving the velocity terms for dipole sources is unviable, whcih led to the two approaches being tested separately to test the validity of each assumption and tests for cases on which these assumption are violated. The dual monopole approach will then redo all these cases to ensure its own validity. Table \ref{tab:dipole_validation_test_case} below summarises the test cases for the dipole; the column "Radius" refers to the permeable surface radius.
+
+\begin{table}[H]
+    \centering
+    \caption{Summary of Dipole Validation Test Cases}
+    \label{tab:dipole_validation_test_case}
+    \begin{tabular}{p{1cm} p{4cm} p{1.8cm} p{1.8cm} p{1.8cm} p{2cm} p{1.5cm} l}
+        \toprule
+        \textbf{No} & \textbf{Assumption} & \textbf{Radius} & \textbf{$M_{source}$} & \textbf{$M_{observer}$} & \textbf{$x_{0,observer}$} & \textbf{Validity}\\
+        \midrule
+        1& Zero Relative Motion & $1.0m$ & [0,0,0] & [0,0,0] & [10,0,0] & Valid \\
+        2& & $1.0m$ & [0.5,0,0] & [0.5,0,0] & [10,0,0] & Valid \\
+        3& & $1.0m$ & [0.5,0,0] & [0,0,0] & [10,0,0] & Invalid \\
+
+        4& Plane Wave & $500.0m$ & [0.5,0,0] & [0,0,0] & [500,0,0] & Valid \\
+        5& & $1.0m$ & [0.5,0,0] & [0,0,0] & [1500,0,0] & Invalid \\
+        
+        6& Dual Monopole & $1.0m$ & [0,0,0] & [0,0,0] & [10,0,0] & - \\
+        7& & $1.0m$ & [0.5,0,0] & [0.5,0,0] & [10,0,0] & - \\
+        8& & $1.0m$ & [0.5,0,0] & [0,0,0] & [10,0,0] & - \\
+
+        9& & $500.0m$ & [0.5,0,0] & [0,0,0] & [1500,0,0] & - \\
+        10& & $1.0m$ & [0.5,0,0] & [0,0,0] & [1500,0,0] & - \\
+
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+In the the following tests, only the Retarded Time algorithm will be used to allow the control surface to move along with the source. Only the finest discretisation resolution from the monopole tests will be used (275 grid points per wavelength and 30 time steps per period), to focus on validating the assumptions. Like the monopole cases, the source is set to radiate with the strength $Q(\tau)=sin(10\tau)$ and is initially placed at the origin.
 
 \subsection{Dipole Derivation Validations} \label{subsec:dipole_derivation_validation}
 

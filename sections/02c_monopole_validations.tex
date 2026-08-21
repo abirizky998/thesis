@@ -92,7 +92,9 @@ Comparing these results with the co-stationary cases (Figure \ref{fig:monopole_S
 
 \subsection{Translating Monopole Case} \label{subsec:translating_monopole_validation}
 
-For the translation case, the set up for the two time algorithms are slightly different, as summarised in Table \ref{tab:monopole_validation_test_case}. In the Retarded Time case, the source moves along the X-axis to the positive direction, while the observer remains at its initial position; while in the Advanced Time case, the source remains stationary while the observer moves parallel to the X-axis to the negative direction. One reason this was done is, at the time of the writing of this work, the Advanced Time algorithm does not support the permeable surface's motion tracking of the source's motion. This means, while the source can move within the permeable surface, the surface must remain stationary in space; which is also the reason why the co-translating case only was tested the Retarded Time algorithm. Another reason for this differentiated approach is to demonstrate the wave compression and expansion due to Doppler shifts, which will be elaborated in the Advanced Time results.
+For the translation case, the set up for the two time algorithms are slightly different, as summarised in Table \ref{tab:monopole_validation_test_case}. In the Retarded Time case, the source moves along the X-axis to the positive direction, while the observer remains at its initial position; while in the Advanced Time case, the source remains stationary while the observer moves parallel to the X-axis to the negative direction. 
+
+One reason for this differentiated approach is, at the time of the writing of this work, the Advanced Time algorithm does not support the permeable surface's tracking of the source's motion. This means, while the source can move within the permeable surface, the surface can only remain stationary in space; which is also the reason why the co-translating case was only tested using the Retarded Time algorithm. Another reason for this differentiated approach is to demonstrate the signal amplification due to Doppler shifts, which will be elaborated in the Advanced Time results.
 
 \begin{figure}[H]
     \begin{subfigure}[b]{0.495\textwidth}
@@ -110,12 +112,9 @@ For the translation case, the set up for the two time algorithms are slightly di
     \label{fig:monopole_TS_RT}
 \end{figure}
 
-Yadda yadda analysis RT
+This case demonstrates the relative motion between the source and observer by imposing a relative Mach number between the two points. In Figure \ref{fig:monopole_TS_RT} the Doppler effect causes the perceived frequency and pressure amplitude at the observer to increase as the source approaches ($0\leq t/T \leq 1.5$), and decrease as it moves away ($t/T>1.5$). This wave compression and expansion effect of Doppler shift is a common occurrence in aeroengines, whereby as the blade rotates, its motion causes the blade to approache and move away from a stationary observer. As the Figure \ref{fig:monopole_TS_RT} above shows, the Retarded Time algorithm can predict this Doppler shift effects with sufficient discretisation resolutions.
 
-This relative motion case demonstrates the effect of relative Mach number. In Figure \ref{fig:monopole_TS_RT} the Doppler effect causes the acoustic frequency and pressure amplitude received by the observer to increase as the source approaches ($0\leq t\leq 0.33s$), and decrease as it moves away ($t>0.33s$).
-
-Begin AT check
-
+Moving to the Advanced Time algorithm, when compared to the Retarded Time algorithm, one noticeable feature of the time-history signal of the former is the lack of the large amplitude spike as the observer moves towards the source. 
 
 \begin{figure}[H]
     \begin{subfigure}[b]{0.495\textwidth}
@@ -133,5 +132,6 @@ Begin AT check
     \label{fig:monopole_TS_AT}
 \end{figure}
 
-yadda yadda AT analysis
+As can be seen from Figure \ref{fig:monopole_TS_AT}, the frequency shifts as the observer is moving, but the pressure amplification peak only reaches $\sim0.07 Pa$, instead of $\sim0.150 Pa$ as in the Retarded Time case. This is not an issue with the Advanced Time algorithm itself, but in how the case was set up. This pressure amplification by a factor of $1/(1-M_r)$ is most officient in the direction of the source's motion, and gradually reduces to $1/(1+M_r)$ in the opposing direction of the motion. However, it can be said from this result that the Advanced Time algorithm can be used to predict this Doppler shifting effect with a comparable accuracy to the Retarded time algorithm.
 
+With these cases explored, it can be concluded that the FW-H code can sufficiently predict the sound signal coming from a thickness (monopole) noise. The next sections within this chapter will focus on the loading (dipole) noise sources, which is highly relevant the noise generated from an open rotor engine.

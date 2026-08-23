@@ -23,7 +23,8 @@ $\tau$ & retarded time \\
 $\Box^2$ & d'Alembertian wave operator, $\Box^2 = \nabla^2 - \frac{1}{c^2}\frac{\partial^2}{\partial t^2}$ \\
 $\nabla^2$ & Laplacian differential operator, $\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$ \\
 % $H$ & Heaviside step function \\
-$\delta$ & Dirac delta function. Subchapter \ref{sec:dipole_derivation}: infinitesimally small distance between two monopoles \\
+$\delta(f)$ and $\delta(g)$ & Dirac delta function of an arbitrary function $f$ and $g$ \\
+$H(f)$ & Heaviside step function, $f<0$ returns $H(f)=0$, and $f>0$ returns $H(f)=1$ \\
 $\delta_{ij}$ & Kronecker delta, $i=j$, $\delta_{ij}=1$; $i \neq j$, $\delta_{ij}=0$ \\
 % $D_v/Dt$ & convective derivative \\
 $y$ & static coordinate system \\
@@ -34,23 +35,32 @@ $f_i(x,t)$ & dipole source strength. Appendix \ref{app:GF}, arbitrary response. 
 $T_{ij}$ & Lighthill stress Tensor, $T_{ij} = \rho u_i u_j + p_{ij} - c^2 p' \delta_{ij}$ \\
 % $L$ & turbulent length scale \\
 $\lambda$ & wavelength \\
+$k$ & wave number, $k=2\pi/\lambda$ or an integer value for Tyler-Sofrin mode, context provided each time \\
 % $k$ & wavenumber \\
 $f$ & wave frequency \\
-$\hat{r}$ & control surface radius \\
+$T$ & wave period, $T=1/f$ \\
+
+$r$ & radiation distance magnitude \\
+$R$ & control surface radius \\
+$\delta$ & small distance between two equal monopoles of opposite signs \\
+% $\hat{r}$ & control surface radius \\
+
 $\textbf{n}$ & normal direction vector \\
-$\psi$ & Appendix \ref{app:GF}, arbitrary wave \\
 % $\Delta x$ & computational grid edge length \\
 % $\Delta t$ & computational time-step size \\
 $m$ & Tyler-Sofrin spatial mode \\
 $n$ & Tyler-Sofrin temporal mode \\
 $\theta$ & Azimuthal angle \\
 $\phi$ & Phase angle \\
-$\omega$ & Interaction frequency or source pulsation frequency, context are provided each time \\
+$\omega$ & Interaction frequency or source pulsation frequency, context provided each time \\
 $\Omega$ & Shaft speed \\
 $B$ & Rotor blade count \\
 $V$ & Stator blade count \\
 $d$ & Circumferential distance between two grid points \\
-$N$ & Grid count \\
+$N$ & Discretisation count, e.g., grid count or time-step count \\
+$X$ & Spatial discretisation parameter, number of grid points per wavelength \\
+$P$ & Temporal discretisation parameter, number of time step count per period \\
+$\psi$ & Appendix \ref{app:GF}, arbitrary wave \\
 % \vspace{0.25cm} & \\ % Blank row for spacing
 
 % --- SUBSCRIPTS ---

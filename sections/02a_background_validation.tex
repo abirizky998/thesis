@@ -7,7 +7,7 @@ This chapter describes the details of the FW-H method and the analytical framewo
 \section{Description of the FW-H Method}\label{sec:FWH_desc}
 \subsection{Derivation of the FW-H Equation}\label{subsec:FWH_derivation}
 
-To predict the open rotor noise, the FW-H equation in its permeable surface form provides a useful basis for noise prediction. This formulation is based on the governing laws of fluid motion, and the descriptions provided below are based on the original paper by Ffowcs Williams and Hawkings \cite{FfowcsWilliams1969}. Consider a control surface \textit{S}, which contains a combination of fluid and solid boundaries, while the region outside contains only fluid. The control surface \textit{S} moves at a velocity $v$ and is defined by the equation $f(x,t)=0$, the following relationship then hold
+To predict the open rotor noise, the FW-H equation in its permeable surface form provides a useful basis for noise prediction. This formulation is based on the governing laws of fluid motion, and the descriptions provided below are based on the original paper by Ffowcs Williams and Hawkings \cite{FfowcsWilliams1969}. Consider a control surface \textit{S}, which contains a combination of fluid and solid boundaries, while the region outside contains only fluid. The control surface \textit{S} moves at a velocity $v$ and is defined by the equation $f(x,t)=0$, the following relationship then hold,
 
 \begin{gather}
     f < 0, H(f) = 0 \nonumber \\
@@ -112,7 +112,7 @@ The FW-H code was written in Fortran 90 to implement the calculations computatio
     ]
 
     % Initial steps
-    \node (init) [process] {Initialisation\\(MPI, Parameters)};
+    \node (init) [process] {Initialisation};
     \node (setup) [process, below=of init] {Observer \\(Point/Scatter/Sphere) \& Grid Setup\\ (Custom/Sphere Mesh)};
     \node (datatype) [decision, below=of setup] {Sound Source?};
 

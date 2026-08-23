@@ -31,7 +31,7 @@ where,
 It should be noted that these definitions are based on the freestream value of the wave parameters, i.e., not accounting for any Doppler shifting effects. As the wave compresses at high speeds, the required discretisation parameters need to be adjusted, and therefore, the values are higher than for stationary, freestream cases. The scaling factor to account for this is simply the Doppler factor, $1-M$, which scales the resolution by the Mach number at which the source is moving. Therefore, when accounting for this effect, the grid and time-step sizing are redefined as,
 
 \begin{equation}
-    N_{grid}=\frac{2\pi R X}{\lambda_s (1-M)}  \quad \text{and} N_{time}= \frac{T_s(1-M)}{P} 
+    N_{grid}=\frac{2\pi R X}{\lambda_s (1-M)}  \quad \text{and} \quad N_{time}= \frac{T_s(1-M)}{P} 
     \label{eq:doppler_PX}
 \end{equation}
 

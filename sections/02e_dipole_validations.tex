@@ -2,7 +2,7 @@
 
 \section{Validation of the FW-H Method for Dipole Sources} \label{sec:dipole_validation}
 
-With the FW-H numerical solver validated for monopoles, the validation is extended to dipole sources. As mentioned in Subchapter \ref{sec:dipole_derivation}, explicitly deriving the velocity terms for dipole sources is unviable, whcih led to the two approaches being tested separately to test the validity of each assumption and tests for cases on which these assumption are violated. The dual monopole approach will then redo all these cases to ensure its own validity. Table \ref{tab:dipole_validation_test_case} below summarises the test cases for the dipole; the column "Radius" refers to the permeable surface radius.
+With the FW-H numerical solver validated for monopoles, the validation is extended to dipole sources. As mentioned in Section \ref{sec:dipole_derivation}, explicitly deriving the velocity terms for a moving dipole is mathematically prohibitive. This necessitates testing the stationary and plane wave assumptions separately to identify their limitations. The dual monopole approach is then used to simulate the same cases as a physics-based baseline. Table \ref{tab:dipole_validation_test_case} below summarises the test cases for the dipole.
 
 \begin{table}[H]
     \centering
@@ -10,140 +10,114 @@ With the FW-H numerical solver validated for monopoles, the validation is extend
     \label{tab:dipole_validation_test_case}
     \begin{tabular}{p{1cm} p{4cm} p{1.8cm} p{1.8cm} p{1.8cm} p{2cm} p{1.5cm} l}
         \toprule
-        \textbf{No} & \textbf{Assumption} & \textbf{Radius} & \textbf{$M_{source}$} & \textbf{$M_{observer}$} & \textbf{$x_{0,observer}$} & \textbf{Validity}\\
+        \textbf{No} & \textbf{Assumption} & \textbf{$R$} & \textbf{$M_{source}$} & \textbf{$M_{observer}$} & \textbf{$x_{0,observer}$} & \textbf{Validity}\\
         \midrule
-        1& Zero Relative Motion & $1.0m$ & [0,0,0] & [0,0,0] & [10,0,0] & Valid \\
-        2& & $1.0m$ & [0.5,0,0] & [0.5,0,0] & [10,0,0] & Valid \\
-        3& & $1.0m$ & [0.5,0,0] & [0,0,0] & [10,0,0] & Invalid \\
+        1& Stationary & $5.0m$ & [0,0,0] & [0,0,0] & [500,0,0] & Valid \\
+        2& & $5.0m$ & [0.5,0,0] & [0,0,0] & [500,0,0] & Invalid \\
 
-        4& Plane Wave & $500.0m$ & [0.5,0,0] & [0,0,0] & [1500,0,0] & Valid \\
-        5& & $1.0m$ & [0.5,0,0] & [0,0,0] & [1500,0,0] & Invalid \\
+        3& Plane Wave & $500.0m$ & [0.5,0,0] & [0,0,0] & [1500,0,0] & Valid \\
+        4& & $5.0m$ & [0.5,0,0] & [0,0,0] & [1500,0,0] & Invalid \\
         
-        6& Dual Monopole & $1.0m$ & [0,0,0] & [0,0,0] & [10,0,0] & - \\
-        7& & $1.0m$ & [0.5,0,0] & [0.5,0,0] & [10,0,0] & - \\
-        8& & $1.0m$ & [0.5,0,0] & [0,0,0] & [10,0,0] & - \\
+        5& Dual Monopole & $5.0m$ & [0,0,0] & [0,0,0] & [500,0,0] & - \\
+        6& & $5.0m$ & [0.5,0,0] & [0,0,0] & [500,0,0] & - \\
 
-        9& & $500.0m$ & [0.5,0,0] & [0,0,0] & [1500,0,0] & - \\
-        10& & $1.0m$ & [0.5,0,0] & [0,0,0] & [1500,0,0] & - \\
+        7& & $500.0m$ & [0.5,0,0] & [0,0,0] & [1500,0,0] & - \\
+        8& & $5.0m$ & [0.5,0,0] & [0,0,0] & [1500,0,0] & - \\
 
         \bottomrule
     \end{tabular}
 \end{table}
 
-In the the following tests, only the Retarded Time algorithm will be used to allow the control surface to move along with the source. Only the finest discretisation resolution from the monopole tests will be used (275 grid points per wavelength and 30 time steps per period), to focus on validating the assumptions. Like the monopole cases, the source is set to radiate with the strength $Q(\tau)=sin(10\tau)$ and is initially placed at the origin.
+As with the monopole cases, the dipole sources radiate with a strength density of $Q(\tau)=sin(10\tau)$ and start at the origin. All cases use the Retarded Time algorithm, allowing the control surface to track the source (see Subsection \ref{subsec:translating_monopole_validation}). For the $5.0m$ permeable surface radius cases, the discretisation matches the finest resolution from the monopole validation (275 grid point per wavelength and 30 time-step per period). The plane wave assumption requires a much larger control surface radius to be valid ($500.0m$), so the resolution is relaxed to 10 grid points per wavelength. This coarser grid resolution remains sufficient for agreement with the analytical solution.
 
-\subsection{Dipole Derivation Validations} \label{subsec:dipole_derivation_validation}
+The dual monopole approach test the exact same test cases to those used for the stationary and plane wave assumption, as seen on Table \ref{tab:dipole_validation_test_case}. Consequently, the dual monopole results are presented alongside the analytical assumptions to compare the validity of this approach as a baseline. For all dual monopole cases, the two sources are separated along the x-axis with a distance $\delta=0.01/k$ between the two points.
 
-Unlike the monopole validation, the co-translating test case is omitted for the dipole cases to isolate the  effects of a non-zero relative mach number. Therefore, the observer is stationary in all test cases. For all subsequent dipole test cases, the dipole axis and translation velocity are strictly imposed along the $x$-axis, while the observer maintains a transverse offset.
+\clearpage
+
+\subsection{Stationary Assumption Validation} \label{subsec:dipole_validation_stationary}
+
+Figure \ref{fig:zm_valid} demonstrates that when the stationary assumption holds ($M_x=0.0$), the numerical FW-H prediction matches the analytical solution very well. However, violating this assumption by introducing a translation of $M_x=0.5$ causes the prediction to fail, which introduces phase lag and amplitude errors. This occurs because the stationary derivation omits the changes in the radiation distance term, $\partial r/\partial\tau=0$, that the convective amplification and Doppler shifts are not correctly calculated in the solutions.
 
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{fig_dipole/dipole_near_valid.png}
+        \includegraphics[width=\textwidth]{fig_dipole/dipole_zm_valid.png}
         \caption{}
-        \label{fig:near_valid}
+        \label{fig:zm_valid}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{fig_dipole/dipole_near_invalid.png}
+        \includegraphics[width=\textwidth]{fig_dipole/dipole_zm_invalid.png}
         \caption{}
-        \label{fig:near_invalid}
+        \label{fig:zm_invalid}
     \end{subfigure}
 
     \vspace{0.5cm}
     
     \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{fig_dipole/dipole_far_valid.png}
+        \includegraphics[width=\textwidth]{fig_dipole/dipole_zm_valid_dm.png}
         \caption{}
-        \label{fig:far_valid}
+        \label{fig:zm_valid_dm}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{fig_dipole/dipole_far_invalid.png}
+        \includegraphics[width=\textwidth]{fig_dipole/dipole_zm_invalid_dm.png}
         \caption{}
-        \label{fig:far_invalid}
+        \label{fig:zm_invalid_dm}
     \end{subfigure}
 
-    \caption[Comparison of analytical and numerical dipole.]{Comparison of analytical and numerical dipole.
-    Top: zero relative Mach number case, with a) following, and b) violating the assumption.
-    Bottom: plane wave case, with c) following, and d) violating the assumption.}
-    \label{fig:dipole_validation}
+    \caption[Comparison of stationary dipole assumption]{\centering Validation of the stationary dipole assumption and the dual monopole.\\
+    Top: stationary dipole assumption, with a) following, and b) violating the assumption.
+    Bottom: dual monopole method, with c) following, and d) violating the assumption.}
+    \label{fig:dipole_validation_stationary}
 \end{figure}
 
-For the zero relative Mach number assumption, the tests examine how relative motion affect the results. In each case, the observer is put at $[50,50,0]$. To examine the integration accuracy, the first case examines a stationary problem, and the second one a relative motion problem, moving the source at $150m/s$ along the x-direction. In the plane wave assumption, the tests only examine the relative motion and putting the observer at $[500,500,0]$, to be in the "far-field." The control surface radius is expanded to $r=400m$ in the valid case and to $r=1m$ in the invalid case.
+The dual monopole approach (Figures \ref{fig:zm_valid_dm} and \ref{fig:zm_invalid_dm}) shows excellent agreement between its own numerical and analytical solutions regardless of source motion, as it relies only on the monopole derivations. However, comparing the dual monopole results to the pure analytical point dipole shows amplitude and phase differences. This is due to how the dipole's strength is defined in either cases; where it uses a first-order Taylor series approximation for the analytical point dipole where the distance approaches zero. Conversely, the dual monopole uses a finite physical gap $\delta$, which introduces a phase lag of $\Delta\phi=k\delta$ between the two sources, which is not present in the analytical point dipole. Such difference between the two solutions can be remediated either using a higher-order Taylor series to define the analytical dipole's strength, or by including a phase lag definition in its approximation. Despite this geometric error, both methods have successfully validated the FW-H code's capability for a stationary dipole source.
 
-For stationary source and true far-field observer (Figures \ref{fig:near_valid} and \ref{fig:far_valid}), the results have good agreements at $<6\%$ error. However, introducing translation into the former and setting near-field surface to the latter violate the assumptions. For the $M_r=0$ case, the errors are due to the non-existent relative motion in Equation \ref{eq:dipole_u1}; for the plane wave assumption, the control surface being in the near-field of the source. The agreement as the source moves away from the observer is due to the observer eventually being in the physical far-field.
+\subsection{Plane Wave Assumption Validation} \label{subsec:dipole_validation_planewave}
 
-\subsection{Dual Monopole Validations} \label{subsubsec:dipole_dual_monopole_validation}
-    
+The plane wave assumption is only mathematically valid when the signal is captured in the acoustic far-field. Therefore, the permeable surface must be sized to fulfil the $kR\gg1$ requirement, where pressure and velocity are in-phase. As a result, the accuracy of the FW-H prediction relies on the integration surface being placed sufficiently far from the source. The results shown in Figures \ref{fig:pw_valid} and \ref{fig:pw_invalid} exhibits this very well, where the numerical integration results are sensitive to the permeable surface's size relative to the source's wavelength.
+
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{fig_dipole/dual_near_valid.png}
+        \includegraphics[width=\textwidth]{fig_dipole/dipole_pw_valid.png}
         \caption{}
-        \label{fig:dual_near_valid}
+        \label{fig:pw_valid}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{fig_dipole/dual_near_invalid.png}
+        \includegraphics[width=\textwidth]{fig_dipole/dipole_pw_invalid.png}
         \caption{}
-        \label{fig:dual_near_invalid}
+        \label{fig:pw_invalid}
     \end{subfigure}
 
     \vspace{0.5cm}
     
     \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{fig_dipole/dual_far_valid.png}
+        \includegraphics[width=\textwidth]{fig_dipole/dipole_pw_valid_dm.png}
         \caption{}
-        \label{fig:dual_far_valid}
+        \label{fig:pw_valid_dm}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{fig_dipole/dual_far_invalid.png}
+        \includegraphics[width=\textwidth]{fig_dipole/dipole_pw_invalid_dm.png}
         \caption{}
-        \label{fig:dual_far_invalid}
+        \label{fig:pw_invalid_dm}
     \end{subfigure}
 
-    \caption[Comparison of analytical and numerical dipole validations using the dual monopole method.]{\centering Comparison of analytical and numerical dipole validations using the dual monopole method.
-    Top: zero relative Mach number test cases, and bottom: plane wave test cases, the numerical results for all cases agree very well with the analytical solution.}
-    \label{fig:dual_monopole_validation}
-\end{figure}
+    \caption[Comparison of plane wave dipole assumption]{\centering Validation of the plane wave dipole assumption and the dual monopole.\\
+    Top: plane wave dipole assumption, with a) following, and b) violating the assumption.
+    Bottom: dual monopole method, with c) following, and d) violating the assumption.}
+    \label{fig:dipole_validation_planewave}
+\end{figure} 
 
-In contrast to the analytical derivations, the dual-monopole method is significantly more robust in all cases, with highest error at $<8\%$. By superimposing two monopoles separated by $k\delta\ll1$, the solver retains the Doppler factor, which is omitted by the zero relative motion assumption. Similarly for the bottom figures, as the monopole was validated using a control surface in the near-field, the results generally agree in the cases which the far-field assumption failed when using the same control surface. It is noted that in Figure \ref{fig:dual_far_invalid}, the result exhibits more significant errors as the source moves away. This could be attributed to the limitations in the solver and will be discussed in the next chapter.
+The wavelength in these test cases are $\sim213m$, by sizing the surface radius to $500.0m$, the numerical FW-H code accurately predicts the pressure at the observer ($\sim3.5\%$ error), even with a coarse spatial resolution (Figure \ref{fig:pw_valid}). This accuracy was received despite the coarse grid resolution at only 10 gird points per wavelength. Conversely, shrinking the control surface to $5.0m$, which violates the plane wave assumption, places the integration boundary within the near-field (Figure \ref{fig:pw_invalid}). In the near-field, the pressure and velocity fields are realistically not in-phase, which causes the FW-H code to incorrectly predict the amplitude while introducing a phase-lag into the numerical prediction. Placing the integration boundary within the near-field in this case essentially forces the plane velocity prediction to be in-phase with the pressure (see Equation \ref{eq:dipole_u2}), which is physically incorrect.
 
-\subsection{Numerical Result Comparisons for Dipole Derivations and Dual Monopoles} \label{subsubsec:numerical_comparison}
+This boundary radius sensitivity is not present in the dual monopole approach. Because this approach uses the solution for the monopole, it directly captures both the near- and far-field propagation of the pressure waves, and is independent of its pressure equation. This allows the numerical FW-H integral to sample the phase difference between the velocity and pressure fields correctly. Consequently, the dual monopole approach predicts the pressure at the observer regardless of whether the control surface radii is within in the near- or far-field of the source (Figure \ref{fig:pw_valid_dm} and \ref{fig:pw_invalid_dm}).
 
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{fig_dipole/dual_dipole_near_valid.png}
-        \caption{}
-        \label{fig:dual_dipole_near_valid}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{fig_dipole/dual_dipole_near_invalid.png}
-        \caption{}
-        \label{fig:dual_dipole_near_invalid}
-    \end{subfigure}
+An interesting behaviour is observed when comparing the analytical solutions of the point dipole and the dual monopole in these cases. Unlike the stationary validation cases where the two analytical baselines showed an amplitude and shift, the analytical solutions between each case here agree very well. Because the observer is placed significantly further away at $1500.0m$, the geometric phase lag caused by the gap between the dual monopoles become negligible. From an observer at such a far away distance, the discrete two point monopoles assembly is physically indistinguishable from a single point dipole.
 
-    \vspace{0.5cm}
-    
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{fig_dipole/dual_dipole_far_valid.png}
-        \caption{}
-        \label{fig:dual_dipole_far_valid}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{fig_dipole/dual_dipole_far_invalid.png}
-        \caption{}
-        \label{fig:dual_dipole_far_invalid}
-    \end{subfigure}
+The following subsection evaluates the sound directivity, which is a property of the dipole sound sources that is possible to model using the dual monopole approach.
 
-    \caption[Comparison of numerical dipole validations.]{\centering Comparison of numerical dipole validations.
-    Top: zero relative Mach number cases, and Bottom: plane wave cases. Left column are cases where the dipole assumptions followed the analytical solutions show good agreement with dual monopole. Right column shows where the dipole assumptions are violated.}
-    \label{fig:dual_dipole_validation}
-\end{figure}
-
-Comparing the dipole derivations to the dual monopole approach shows that there are apparent deviations in results other than the stationary case. For Figure \ref{fig:dual_dipole_near_invalid}, it is obvious that the cause is the lack of Doppler effect in the assumption. Figure \ref{fig:dual_dipole_far_valid} is interesting due to a significant difference in amplitude as the sources approach the observers. Then as they move away, a good agreement in amplitude is observed. This is likely due to the imposing of the $x$-axis in the dipole source, because as it moves away, the $y$-axis contribution in the emission distance becomes insignificant.
+\clearpage

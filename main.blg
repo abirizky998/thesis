@@ -7,49 +7,49 @@ The style file: ieeetr.bst
 Database file #1: references.bib
 Warning--empty institution in Dunn2014
 Warning--empty institution in Envia2014
-Warning--empty booktitle in Lewis2024
 Warning--empty chapter and pages in WoanGregorek1978
 Warning--empty publisher in WoanGregorek1978
 Warning--empty year in WoanGregorek1978
-You've used 31 entries,
+Warning--empty booktitle in Lewis2024
+You've used 40 entries,
             1876 wiz_defined-function locations,
-            677 strings with 8823 characters,
-and the built_in function-call counts, 6478 in all, are:
-= -- 599
-> -- 255
+            740 strings with 10774 characters,
+and the built_in function-call counts, 8848 in all, are:
+= -- 826
+> -- 356
 < -- 0
-+ -- 99
-- -- 68
-* -- 434
-:= -- 946
-add.period$ -- 37
-call.type$ -- 31
-change.case$ -- 26
++ -- 136
+- -- 96
+* -- 613
+:= -- 1274
+add.period$ -- 46
+call.type$ -- 40
+change.case$ -- 34
 chr.to.int$ -- 0
-cite$ -- 37
-duplicate$ -- 366
-empty$ -- 678
-format.name$ -- 68
-if$ -- 1582
+cite$ -- 46
+duplicate$ -- 486
+empty$ -- 905
+format.name$ -- 96
+if$ -- 2160
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 28
-newline$ -- 102
-num.names$ -- 29
-pop$ -- 130
+int.to.str$ -- 40
+missing$ -- 35
+newline$ -- 129
+num.names$ -- 37
+pop$ -- 161
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 185
+skip$ -- 268
 stack$ -- 0
-substring$ -- 272
-swap$ -- 106
+substring$ -- 427
+swap$ -- 155
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 6
-while$ -- 48
-width$ -- 33
-write$ -- 281
+while$ -- 69
+width$ -- 42
+write$ -- 364
 (There were 6 warnings)

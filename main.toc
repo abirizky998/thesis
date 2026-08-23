@@ -6,52 +6,52 @@
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Open Rotor Noise Background}{1}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Hybrid Noise Prediction Background}{3}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Research Objectives and Outlines}{5}{section.1.4}%
-\contentsline {chapter}{\numberline {2}Development and Validation of the FW-H Method}{6}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Description of the FW-H Method}{6}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Derivation of the FW-H Equation}{6}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Description of the FW-H Code}{9}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}Validation of the FW-H Code}{11}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Test Cases}{12}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Error Quantification}{13}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}Analytical Solution for a Monopole}{14}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Monopole Pressure Equation}{14}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Monopole Velocity Equation}{14}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Monopole Density Equation}{15}{subsection.2.3.3}%
-\contentsline {section}{\numberline {2.4}Validation of the FW-H Method for Monopole Sources}{15}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Co-Stationary Monopole Case}{16}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Co-Translating Monopole Case}{17}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Translating Monopole Case}{18}{subsection.2.4.3}%
-\contentsline {section}{\numberline {2.5}Analytical Solution for a Dipole}{20}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Dipole Pressure Equation}{20}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Dipole Velocity Equation}{21}{subsection.2.5.2}%
-\contentsline {subsubsection}{Dipole Velocity Equation: Zero Relative Mach Number Assumption}{21}{subsection.2.5.2}%
-\contentsline {subsubsection}{Dipole Velocity Equation: Plane Wave Assumption}{22}{equation.2.19}%
-\contentsline {subsubsection}{Dual Monopole}{22}{equation.2.21}%
-\contentsline {section}{\numberline {2.6}Validation of the FW-H Method for Dipole Sources}{23}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Dipole Derivation Validations}{23}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.6.2}Dual Monopole Validations}{25}{subsection.2.6.2}%
-\contentsline {subsection}{\numberline {2.6.3}Numerical Result Comparisons for Dipole Derivations and Dual Monopoles}{26}{subsection.2.6.3}%
-\contentsline {subsection}{\numberline {2.6.4}Directivity}{27}{subsection.2.6.4}%
-\contentsline {section}{\numberline {2.7}Concluding Summary}{29}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Sensitivity Analysis of the FW-H Method}{30}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Sensitivity Analysis Background and Methodology}{30}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Definition of Non-Dimensional Discretisation Parameters}{30}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Background of Test Cases}{31}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Multipole Ring Analysis}{32}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Background of Multipoles Analysis}{32}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Mimicking the Noise Signature of a Propeller using Analytical Multipoles}{32}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Sensitivity of the FW-H Method in Multipole Ring Prediction}{32}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Sensitivity Analysis of Rotating Monopoles}{32}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Background of Rotating Monopole Analysis}{32}{subsection.3.3.1}%
-\contentsline {section}{\numberline {3.4}Concluding Summary}{32}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Application of the FW-H Method on Open Rotor Engine CFD Model}{33}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Conclusions}{34}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Future Work}{35}{chapter.6}%
-\contentsline {chapter}{Appendix \numberline {A}Research Project Gantt Chart}{41}{appendix.1.A}%
-\contentsline {chapter}{Appendix \numberline {B}Variable Derivatives}{42}{appendix.1.B}%
-\contentsline {chapter}{Appendix \numberline {C}Green's Function for Wave Equations}{43}{appendix.1.C}%
-\contentsline {chapter}{Appendix \numberline {D}Replacing $\partial / \partial x_i$ Terms}{45}{appendix.1.D}%
-\contentsline {chapter}{Appendix \numberline {E}Monopole Velocity Derivations}{46}{appendix.1.E}%
-\contentsline {chapter}{Appendix \numberline {F}Dipole Velocity: Zero Relative Mach Number Assumption Derivations}{48}{appendix.1.F}%
-\contentsline {chapter}{Appendix \numberline {G}Dipole Velocity: Plane Wave Assumption Derivations}{49}{appendix.1.G}%
+\contentsline {section}{\numberline {1.4}Aeroacoustics Prediction using Hybrid Method Background}{5}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Research Objectives and Outlines}{6}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Development and Validation of the FW-H Method}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Description of the FW-H Method}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Derivation of the FW-H Equation}{7}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Description of the FW-H Code}{10}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Validation of the FW-H Code}{12}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Test Cases}{13}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Error Quantification}{14}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Analytical Solution for a Monopole}{15}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Monopole Pressure Equation}{15}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Monopole Velocity Equation}{15}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Monopole Density Equation}{16}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Validation of the FW-H Method for Monopole Sources}{16}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Co-Stationary Monopole Case}{17}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Co-Translating Monopole Case}{18}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Translating Monopole Case}{19}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Analytical Solution for a Dipole}{21}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Dipole Pressure Equation}{21}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Dipole Velocity Equation}{22}{subsection.2.5.2}%
+\contentsline {subsubsection}{Dipole Velocity Equation: Stationary Assumption}{22}{subsection.2.5.2}%
+\contentsline {subsubsection}{Dipole Velocity Equation: Plane Wave Assumption}{23}{equation.2.19}%
+\contentsline {subsubsection}{Dual Monopole}{23}{equation.2.21}%
+\contentsline {section}{\numberline {2.6}Validation of the FW-H Method for Dipole Sources}{24}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Stationary Assumption Validation}{25}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Plane Wave Assumption Validation}{26}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Dipole Directivity using Dual Monopole Approach}{28}{subsection.2.6.3}%
+\contentsline {section}{\numberline {2.7}Concluding Summary}{30}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Sensitivity Analysis of the FW-H Method}{32}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Sensitivity Analysis Background and Methodology}{32}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Definition of Non-Dimensional Discretisation Parameters}{32}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Background of Test Cases}{33}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Multipole Ring Analysis}{34}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Background of Multipoles Analysis}{34}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Mimicking the Noise Signature of a Propeller using Analytical Multipoles}{34}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Sensitivity of the FW-H Method in Multipole Ring Prediction}{34}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Sensitivity Analysis of Rotating Monopoles}{34}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Background of Rotating Monopole Analysis}{34}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Concluding Summary}{34}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Aerodynamic and Aeroacoustic Prediction of an Open Rotor using a Hybrid URANS-FW-H Method}{35}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Conclusions}{36}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Future Work}{37}{chapter.6}%
+\contentsline {chapter}{Appendix \numberline {A}Research Project Gantt Chart}{43}{appendix.1.A}%
+\contentsline {chapter}{Appendix \numberline {B}Variable Derivatives}{44}{appendix.1.B}%
+\contentsline {chapter}{Appendix \numberline {C}Green's Function for Wave Equations}{45}{appendix.1.C}%
+\contentsline {chapter}{Appendix \numberline {D}Replacing $\partial / \partial x_i$ Terms}{47}{appendix.1.D}%
+\contentsline {chapter}{Appendix \numberline {E}Monopole Velocity Derivations}{48}{appendix.1.E}%
+\contentsline {chapter}{Appendix \numberline {F}Dipole Velocity: Stationary Assumption}{50}{appendix.1.F}%
+\contentsline {chapter}{Appendix \numberline {G}Dipole Velocity: Plane Wave Assumption}{51}{appendix.1.G}%
